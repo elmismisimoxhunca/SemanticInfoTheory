@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -14,7 +15,7 @@ import tempfile
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ref_gen  # noqa: E402
 
-WS = Path("/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z")
+WS = Path(os.environ.get("BLOCK01_WORKSPACE", Path(__file__).resolve().parents[1]))
 GEN = WS / "build" / "generate_corpus"
 EXEC_SHA = "01ae4eb00783b257241982d1ddf2bbe0bf9adcefa92a55bd7c565bb901c56da4"
 

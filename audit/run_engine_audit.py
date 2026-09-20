@@ -16,7 +16,7 @@ import tempfile
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ref_kt import reference_surface  # noqa: E402
 
-WS = Path("/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z")
+WS = Path(os.environ.get("BLOCK01_WORKSPACE", Path(__file__).resolve().parents[1]))
 KT_STREAM = WS / "build" / "kt_stream"
 PROTOCOL_SHA = "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2"
 FREEZE_SHA = "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036"

@@ -7,7 +7,7 @@ The authoritative working copy moved from DESKTOP-9BKM69O (`host_hkr9k292wz`, fo
 ## Preserved
 
 - Frozen protocols, manifests, execution supplements, and hashes.
-- Exact C++ engine and Python interface.
+- Exact C++ engine and Python interface, plus the V3-bound release binaries in the committed core-release archive.
 - Generator, analysis, audit, and Track B ingestion sources.
 - Independent audit evidence and published handoffs.
 - All 27 complete Track A surface JSON files and their metadata.

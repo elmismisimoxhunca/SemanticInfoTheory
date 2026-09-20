@@ -34,20 +34,38 @@ See `MIGRATION.md`, `REVB_PROTOCOL.md`, `REVB_FREEZE.json`, and `REVB_AUDIT.md` 
 
 ## Build and focused verification
 
+A fresh source build is useful for portability checks, but it is **not** the binary frozen by the V3 execution supplement. Build it outside `build/`:
+
 ```bash
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j2
-ctest --test-dir build --output-on-failure
+cmake -S . -B /tmp/SemanticInfoTheory-build -DCMAKE_BUILD_TYPE=Release
+cmake --build /tmp/SemanticInfoTheory-build -j2
+ctest --test-dir /tmp/SemanticInfoTheory-build --output-on-failure
+```
+
+Restore the exact frozen production binaries before running audits or continuing production:
+
+```bash
+rm -rf build
+tar -xzf artifacts/origin-thread/block01-revb-core-release.tar.gz \
+  build/kt_stream build/generate_corpus build/core_tests build/libblock01_kt.a
+python3 - <<'PY'
+import hashlib, json, pathlib
+expected = json.load(open("REVB_EXECUTION_SUPPLEMENT_V3.json"))["release_binary_sha256"]
+for name, digest in expected.items():
+    assert hashlib.sha256(pathlib.Path(name).read_bytes()).hexdigest() == digest, name
+print("frozen release hashes verified")
+PY
+./build/core_tests
 python3 audit/run_engine_audit.py
 python3 audit/run_generator_audit.py
 python3 audit/run_trackb_audit.py
 ```
 
-The audit commands expect the local Track B corpus snapshot described in `data/README.md`.
+The audit commands expect the local Track B corpus snapshot described in `data/README.md`. Do not substitute a locally rebuilt executable for a V3-bound production run.
 
 ## Resume the frozen run
 
-Run exactly one scoring pipeline at a time:
+Run exactly one scoring pipeline at a time using the verified frozen binaries:
 
 ```bash
 python3 scripts/resume_throttled_orchestrator.py \

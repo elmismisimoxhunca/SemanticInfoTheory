@@ -8,13 +8,15 @@ from __future__ import annotations
 import collections
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ref_gen  # noqa: E402
 
-ART = Path("/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/thread-storage/thr_363jypygh6/trackb_corpora")
+ROOT = Path(__file__).resolve().parents[1]
+ART = Path(os.environ.get("BLOCK01_TRACKB_CORPUS_ROOT", ROOT / "data" / "trackb_corpora"))
 CHUNK = 2**23
 B4_SEEDS = [601, 602, 603, 604, 605]
 B5_SEEDS = [701, 702, 703, 704, 705]
