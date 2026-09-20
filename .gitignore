@@ -1,0 +1,38 @@
+# Build products
+/build/
+/build-sanitize/
+/CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+
+# Python caches and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.conn_test.txt
+
+# Exact-count stores are disposable and can be many GiB
+*.store
+/revb_run/**/stores/
+
+# Generated/raw corpora stay machine-local
+/revb_run/track_a/corpora/*.bin
+/revb_run/track_b/corpora/*.bin
+/data/trackb_corpora/*.bin
+/data/trackb_corpora/*.bin.meta.json
+/origin-thread-storage/trackb_corpora/*.bin
+/origin-thread-storage/trackb_corpora/*.bin.meta.json
+
+# Local transfer/archive material
+/migration-transfer/
+/*.tar
+/*.tar.gz
+/*.tar.zst
+
+# Editor and OS files
+.DS_Store
+*.swp
+*~

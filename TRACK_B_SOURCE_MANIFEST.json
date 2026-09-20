@@ -1,0 +1,87 @@
+{
+  "schema": "block01-revb-track-b-source-manifest-v1",
+  "created_utc": "2026-09-14T05:30:00Z",
+  "status": "frozen_before_track_b_scoring",
+  "authority": {
+    "requirements_sha256": "b11cda00385ec4701f4b82aee328d9445d91bf3a5260489112c565875ff16535",
+    "protocol_sha256": "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2",
+    "freeze_sha256": "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036"
+  },
+  "provenance_files_sha256": {
+    "trackb/SOURCES.md": "87d7fefb1a86005ae6e87dbea79e785a95f73249d281063804dbeaf5b6146546",
+    "trackb/TRACK_B_HANDOFF.md": "6ca27b9d0ee6c63b9bae185585af7e1a49bbfccd2fef2861856d88844cc15a2b",
+    "trackb/wiki_extract.py": "62758a6bf06cb06ba11154abb16ca25fef457b8586f2d7ab27a04a5e50344636",
+    "trackb/clean_chat.py": "408f2404bc0d330379c2539a991c0b33eeeddc5b0f11b470119337c96bfdd950",
+    "trackb/splitmix64.py": "e0287cfaba9b36a7ad7bd73aa1732a64a334de94a014539f40c175aef7329711",
+    "trackb/segment.py": "b12a9323fe0a6917376c731933b8778334f8b99288f75789bd9581cc3c41e3e2",
+    "trackb/build_draws_transforms.py": "ae9c90844093bd36d49cf8180c08262bcf65f7eb79bb6523cd4f818e97af606a",
+    "trackb_corpora/draw_manifest.json": "ec22d96eab6348059954005b1b7127e78d1f464e5c79113c1232aa9f229a2258",
+    "trackb_corpora/SHA256SUMS.txt": "5f118d9313580137628993b5d33a2d92523cafe7aae56ada307bb2bea0fd65fb"
+  },
+  "sources": {
+    "B1": {
+      "identity": "English Wikipedia 20260901 pages-articles multistream chunk p1p41242",
+      "url": "https://dumps.wikimedia.org/enwiki/20260901/enwiki-20260901-pages-articles-multistream1.xml-p1p41242.bz2",
+      "upstream_sha1": "a97f62049996fd3d3ba03e6fc9593b2695b5b441",
+      "local_sha256": "d3b45c375e70edf4e155777a42603c774e31cfb5319f26e00ee3d542501fd6c4",
+      "license": "CC BY-SA 4.0 and GFDL",
+      "extraction": "exact policy in trackb/SOURCES.md"
+    },
+    "B2": {
+      "identity": "Linux kernel v6.6 .c files only",
+      "url": "https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.tar.xz",
+      "local_sha256": "d926a06c63dd8ac7df3f86ee1ffc2ce2a3b81a2d168484e76b5b389aba8e56d0",
+      "license": "GPL-2.0",
+      "language": "C",
+      "extraction": "exact policy in trackb/SOURCES.md"
+    },
+    "B3": {
+      "identity": "TalkBank CHILDES Eng-NA 0-Eng-NA-MOR.zip adult-role tiers",
+      "url": "https://talkbank.org/childes/access/Eng-NA/0-Eng-NA-MOR.zip",
+      "local_sha256": "b7ad9046e5fbab91f5aec3bd15f82c6a98ce9abf19699f8c76d84d7196d3eeb2",
+      "license": "CC BY-NC-SA 3.0",
+      "adult_roles": ["Mother", "Father", "Grandmother", "Grandfather", "Investigator", "Teacher", "Adult", "Caretaker", "Visitor", "Relative"],
+      "extraction": "exact policy and addressee limitation in trackb/SOURCES.md"
+    }
+  },
+  "draw_policy": {
+    "length_bytes": 8388608,
+    "draws_per_corpus": 5,
+    "B1_B2_B3": "five consecutive disjoint slices of one deterministic 41943040-byte stream",
+    "B4": "matching B1 draw with frozen interior sentence-unit Fisher-Yates shuffle; prefix/suffix fixed",
+    "B5": "matching B1 draw with frozen within-unit non-whitespace-token Fisher-Yates shuffle; whitespace tokens fixed",
+    "whitespace_bytes": [9, 10, 11, 12, 13, 32],
+    "B4_seeds": [601, 602, 603, 604, 605],
+    "B5_seeds": [701, 702, 703, 704, 705],
+    "draw_order": [1, 2, 3, 4, 5]
+  },
+  "corpus_hashes": {
+    "B1_draw1.bin": "c624fab34b9c392b5740e3eef4f2135bd0a7ec23f1dd640fa76c34d792603e99",
+    "B1_draw2.bin": "f9e1ac33b8332838dba6292c2990d36495e20dc4fb62c1e7fc79e8782a0e6e9d",
+    "B1_draw3.bin": "4455ab173e48d317259579f2604339c799eb3a8bf8d9a5d714627072caa8daaf",
+    "B1_draw4.bin": "27f4aeb640fbab533e369e046815cff5e9518e902cb7ecfc6bc87d24bbc954f4",
+    "B1_draw5.bin": "cc0a3324d1e76a7f99f4d71ab82e07101393bb24bf76db84eff67ed8c70cad07",
+    "B2_draw1.bin": "a7ec61e92fdb0c6f6fd2c8ddb132f3eb081864e95c257da0ee82a2125d2552d7",
+    "B2_draw2.bin": "2f95edfb7bf42e0c9ca8a2064855ed140ac2aea37276c04d5b9af5889edf9329",
+    "B2_draw3.bin": "58f324992d948b197dabcad4069cd299d7a061dd1e421a4eefdfeca29ef6156d",
+    "B2_draw4.bin": "ef6dac200573e404d961ff5075087b3e477e85c6748adeecfcbd056f158c2206",
+    "B2_draw5.bin": "619e008d69b04250536c4b286b15d5379b8c7eca0b94f1acac7e0a7c73c5b81c",
+    "B3_draw1.bin": "710c619b18c282dabca06b0e59112bb8e7ab7c86a31bac642e17fe2be8455d1b",
+    "B3_draw2.bin": "a5978cee24ed3f230d18f83b381be2b3a6bc600248be14a1ed3323649cbe2b94",
+    "B3_draw3.bin": "9b1b1ccd56f5124c8ff35cb44bd56490b535c25785a6e3153fab96ed84666265",
+    "B3_draw4.bin": "f036960b1fd74cda2e7df4c7c4c300183a9719c047ac295e0bf356e6aae648e6",
+    "B3_draw5.bin": "d58253c5debb625f2d172548096edffd6c3be6943573559887b75ae5c4d33a1e",
+    "B4_draw1.bin": "44b4e9275cb818d2bdc0de38a585e78e48d78eed36e2df364665deb358f05a65",
+    "B4_draw2.bin": "ba2c2dd275258ec8f16b958bba12f7362a6bc91fa7c13fa32e56cc73c10508f0",
+    "B4_draw3.bin": "79164cc4b82a26fedebc11d6eb144d9b2076ca9ca865da89c078d13bb5700b8b",
+    "B4_draw4.bin": "7b50d81b513383bb69f1ac8a94160f13bea70cca8bc60ecf4f52fd98bed7340e",
+    "B4_draw5.bin": "98d8310164c0beed00084e7befbc57a4a3b4f1951d6828bb790feb9ee973bd06",
+    "B5_draw1.bin": "951c5cbbf5c7b967d5a463aca4f9e52a1a753f953bc7b78fb665e4223476c37d",
+    "B5_draw2.bin": "2169d2403b54c98efa5dd9ada395290b0b27e153d939364dd10ead213e19ee5c",
+    "B5_draw3.bin": "097d3f5d51055da36ce2af9a0142a257cc559bbf2bab9864d797bdadcc58decb",
+    "B5_draw4.bin": "90d9df51961ae80c744649af919a76ea0aa76b0bd38210ab6b91c5239d435bfc",
+    "B5_draw5.bin": "65637779d632449ecb54abbaec61887040a4bb4f2802beda78ba2959fee86e04"
+  },
+  "retention": "upstream downloads omitted; exact URLs, hashes, scripts, manifests, and all 25 final draw files retained",
+  "measurement_before_manifest": false
+}

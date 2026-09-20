@@ -1,0 +1,32 @@
+{
+  "schema": "block01-revb-core-fixture-audit-v1",
+  "created_utc": "2026-09-14T05:07:00Z",
+  "execution_supplement_sha256": "9931b24dbd408c7450a07596fefe6cbe9a71470b6d82af76522f0803067e88b7",
+  "status": "passed",
+  "commands": [
+    "cmake --build build -j 2",
+    "ctest --test-dir build --output-on-failure",
+    "cmake --build build-sanitize -j 2",
+    "ASAN_OPTIONS=detect_leaks=1 ctest --test-dir build-sanitize --output-on-failure",
+    "build/kt_stream fixture CLI schema smoke check",
+    "BLOCK01_KT_STREAM=build/kt_stream PYTHONPATH=. Python facade smoke check",
+    "build/generate_corpus --fixture independent SplitMix64/kernel vector checks"
+  ],
+  "results": {
+    "release_ctest": "1/1 passed",
+    "asan_ubsan_ctest": "1/1 passed",
+    "cli_schema": "passed",
+    "python_api": "passed",
+    "track_B_nested_metadata_and_whitespace": "passed",
+    "generator_vectors": "passed against independent Python SplitMix64 and frozen G1/G2/G3(8)/G4/G5/G6 kernels",
+    "G5_duplicate_provenance": "G5(4), G5(8), and G5(12) fixture bytes were identical and every sidecar carried explicit duplicate_provenance"
+  },
+  "fixture_scope": {
+    "ordinary_deterministic_implementation_fixtures": true,
+    "experimental_samples": 0,
+    "production_corpora": 0,
+    "production_surfaces": 0,
+    "retained_fixture_corpora": 0
+  },
+  "note": "Generator fixture draws occurred only after the bound generator source, PRNG, and executable hashes were frozen in the execution supplement. No frozen operational choice was changed from fixture results."
+}

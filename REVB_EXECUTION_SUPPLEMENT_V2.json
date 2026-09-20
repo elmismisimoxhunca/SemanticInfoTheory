@@ -1,0 +1,164 @@
+{
+  "schema": "block01-revb-execution-supplement-v2",
+  "created_utc": "2026-09-14T05:08:52Z",
+  "status": "core_fixture_release_frozen_production_measurement_not_started",
+  "workspace": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z",
+  "artifact_directory": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/thread-storage/thr_363jypygh6",
+  "bindings": {
+    "requirements_sha256": "b11cda00385ec4701f4b82aee328d9445d91bf3a5260489112c565875ff16535",
+    "protocol_sha256": "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2",
+    "freeze_sha256": "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036",
+    "delta_sha256": "52c60252e59d163913129f5fed30476e0fb8645802f3c739cbe454891928d762",
+    "prng_sha256": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542"
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "83dc20b42996eeadba4c3feb0c1633c57713728313b630398bfebfc6398fabb9",
+    "include/block01/kt_engine.hpp": "a58cea1b32d9d77cc12aeb3eb33e1a145dd90e05f1961f07efb2346d47cdd755",
+    "src/kt_engine.cpp": "85c57d1e8c773822dd3b2029e0ee17d28134506264e14fec1d60935924d913e5",
+    "src/kt_stream.cpp": "dd5b8a5bb4e096a1163a217ed0cd2baecd366f095c15e7e07dc560d81836446f",
+    "src/generate_corpus.cpp": "d19d333053cc82df4bab120006493563471b39973773f4e2e5c284fde33d2d06",
+    "design/prng_reference.hpp": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542",
+    "block01.py": "58c250b5649015a1a2fe86aa9c611dcc0bfc5d5e943debb29cd662091b416035",
+    "scripts/run_track_a.py": "33a7bcd4e44b4d1b8d20e98da4b0aba331ef581ede17a8b5bc4d1fef2d4f4ff5",
+    "tests/core_tests.cpp": "914e784926b43cfc60ee310a7cbd4b2e1fd8cd6de1725a57e037d753bedb5917"
+  },
+  "release_binary_sha256": {
+    "build/kt_stream": "18f42081f5efdb026da600fd1fd19543f0606977e98725d413f755a1c8bc268b",
+    "build/generate_corpus": "9bb8246bd0f246f54a678832d2d6eda23e8fff314caeee25add06868563a79f2",
+    "build/core_tests": "51c34e891a2cbe341a94e319b29636c318b5d65ce213de7b40761074928868a6",
+    "build/libblock01_kt.a": "db91ca0babc0fc413a40cc162c7d647b3db3bc8e42f1e8eabe8919dc55055776"
+  },
+  "toolchain": {
+    "compiler_path": "/usr/bin/c++",
+    "compiler_version": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "compiler_sha256": "1353e9bdd29a7295c7226bf6c63abccce056d8cac31f112e5cdbecc3f28c2769",
+    "cmake_version": "3.28.3",
+    "generator": "Unix Makefiles",
+    "build_type": "Release",
+    "cxx_flags": "-O3 -DNDEBUG -std=c++20 -Wall -Wextra -Werror -ffp-contract=off",
+    "compile_definitions": [
+      "_FILE_OFFSET_BITS=64"
+    ],
+    "fast_math": false,
+    "platform": "Linux DESKTOP-9BKM69O 6.18.33.2-microsoft-standard-WSL2 x86_64 GNU/Linux",
+    "libm_path": "/lib/x86_64-linux-gnu/libm.so.6",
+    "libm_sha256": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0",
+    "libstdcxx_sha256": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11",
+    "libc_sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf"
+  },
+  "fixed_engine_settings": {
+    "production_workers": 1,
+    "cache_data_bytes": 2147483648,
+    "cache_page_bytes": 65536,
+    "cache_pages": 32768,
+    "input_chunk_bytes": 65536,
+    "maximum_order": 16,
+    "track_A": {
+      "alphabet_size": 32,
+      "digit_bits": 5,
+      "dense_depths": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "tail_directory_depth": 4,
+      "node_record_bytes": 576,
+      "records_per_page": 113
+    },
+    "track_B": {
+      "alphabet_size": 256,
+      "digit_bits": 8,
+      "dense_depths": [
+        0,
+        1
+      ],
+      "tail_directory_depth": 2,
+      "node_record_bytes": 4160,
+      "records_per_page": 15
+    },
+    "count_store": "versioned append-only fixed records; bounded CLOCK cache; exact uint64 counts; in-progress stores invalid on crash; no resume claim",
+    "publication": "result JSON written to a temporary file, fsynced, atomically renamed, and parent directory fsynced",
+    "default_store_retention": "ephemeral store removed only after successful scoring/finalization and before result publication; --keep-store explicitly retains tail-only no-resume evidence"
+  },
+  "api_and_schema": {
+    "cpp": "availability(corpus_path,k_max,checkpoints,base_options)->AvailabilityResult",
+    "python": "block01.availability(corpus_path,k_max,checkpoints)->dict",
+    "cli": "build/kt_stream --corpus PATH --output JSON --store PATH --k-max K --checkpoints CSV --cache-mib 2048",
+    "corpus_sidecar_schema": "block01-corpus-v1",
+    "result_schema": "block01-availability-surface-v1",
+    "surface_axes": [
+      "checkpoint",
+      "order"
+    ],
+    "alphabet_dispatch": "validated mandatory sidecar only; never observed-symbol inference",
+    "hashing": "corpus SHA256 updated from each input chunk in the scoring pass and verified at EOF"
+  },
+  "annex_instrumentation": {
+    "raw_checkpoint_L_A_and_binary64_bits": true,
+    "conditional_ML_recurrence": true,
+    "label": "KT-minus-ML descriptive redundancy; not uniquely identifiable pure estimation cost",
+    "occupancy": "exact empirical full-context visitation recurrence after each update; startup excluded",
+    "track_A_predicted_symbol_losses": true,
+    "track_A_G3_type_totals": true,
+    "track_B_ascii_whitespace_buckets_and_latest_aligned_prefix": true,
+    "derived_later": [
+      "increments",
+      "linear-n mixed finite differences",
+      "ridge",
+      "means",
+      "sample standard deviations",
+      "prediction and gate arithmetic"
+    ]
+  },
+  "verification_before_this_freeze": {
+    "release_build": "passed",
+    "ctest_release": "1/1 passed",
+    "asan_ubsan_build": "passed",
+    "ctest_asan_ubsan": "1/1 passed",
+    "covered": [
+      "independent exact per-order KT reference for alphabets 32 and 256",
+      "startup and multiple checkpoints",
+      "full 128-bit depth-16 byte history",
+      "all byte values including 255 and Track A invalid byte 32",
+      "exact occupancy recurrence",
+      "incremental ML versus independent fixture reference",
+      "Track A predicted-symbol attribution",
+      "Track B ASCII-whitespace attribution and aligned prefix",
+      "one-page forced dirty spill versus larger cache with bit-identical KT losses",
+      "cache tombstone rebuild termination",
+      "small global-bijection invariance",
+      "mandatory/mismatched metadata rejection",
+      "CLI JSON schema and Python facade smoke checks"
+    ]
+  },
+  "chronology": {
+    "experimental_generator_samples_before_this_freeze": 0,
+    "experimental_corpora_before_this_freeze": 0,
+    "production_surfaces_before_this_freeze": 0,
+    "ordinary_engine_fixtures_before_this_freeze": true,
+    "generator_executable_invocations_before_this_freeze": [
+      "--help only; no PRNG construction or draw"
+    ],
+    "ordinary_post_v1_generator_fixtures_before_this_freeze": true,
+    "post_v1_fixture_audit_sha256": "095881181383086479b35b98785a4aa460bbfba79a2c47577a372ea668036453"
+  },
+  "track_A_release": {
+    "registered_runs": 90,
+    "launcher": "scripts/run_track_a.py",
+    "execution_order": "REVB_FREEZE.json configuration order then seed order",
+    "generator_provenance": "each G5 identity is generated independently and sidecar duplicate_provenance explicitly records frozen lag-2 identity; no silent replication claim",
+    "measurement_authorized_by_this_file": false,
+    "reason": "independent audit is the next workflow phase; this supplement only freezes the implementation for fixtures and subsequent audit",
+    "launcher_validation": "SHA256-checks REVB_FREEZE.json and validates reused corpus/result run, freeze, execution-manifest, N, K and checkpoint identities."
+  },
+  "track_B": {
+    "core_support_ready": true,
+    "source_or_ingestion_owned_here": false,
+    "production_ready": false,
+    "blocker": "separate frozen source/provenance manifest and adequate corpus inputs are required before B sampling"
+  },
+  "amendment_policy": "append-only replacement supplement with explicit invalidation if any bound source or binary changes; never tune from measured surfaces",
+  "supersedes_execution_supplement_sha256": "9931b24dbd408c7450a07596fefe6cbe9a71470b6d82af76522f0803067e88b7",
+  "amendment_reason": "Pre-measurement launcher hardening only: verify the actual REVB_FREEZE.json bytes, validate execution-manifest hexadecimal syntax, and reject reuse of corpora/results bound to another execution supplement. Engine, generator, PRNG, binaries, statistical definitions, and resource settings are unchanged."
+}

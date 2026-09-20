@@ -1,0 +1,241 @@
+{
+  "amendment_policy": "append-only replacement supplement with explicit invalidation if any bound source or binary changes; never tune from measured surfaces",
+  "amendment_reason": "Pre-measurement provenance/release amendment only: bind the audited Track B source/draw manifest and 25 corpus hashes, add exact Track B sidecar/launcher binding, harden Track A reused checkpoint-grid validation, and freeze reporting/cost/separability harnesses. Core engine, generator, PRNG, release binaries, cache, kernels, thresholds, predictions, and statistical conventions are unchanged. No surface existed when frozen.",
+  "annex_instrumentation": {
+    "conditional_ML_recurrence": true,
+    "derived_later": [
+      "increments",
+      "linear-n mixed finite differences",
+      "ridge",
+      "means",
+      "sample standard deviations",
+      "prediction and gate arithmetic"
+    ],
+    "label": "KT-minus-ML descriptive redundancy; not uniquely identifiable pure estimation cost",
+    "occupancy": "exact empirical full-context visitation recurrence after each update; startup excluded",
+    "raw_checkpoint_L_A_and_binary64_bits": true,
+    "track_A_G3_type_totals": true,
+    "track_A_predicted_symbol_losses": true,
+    "track_B_ascii_whitespace_buckets_and_latest_aligned_prefix": true
+  },
+  "api_and_schema": {
+    "alphabet_dispatch": "validated mandatory sidecar only; never observed-symbol inference",
+    "cli": "build/kt_stream --corpus PATH --output JSON --store PATH --k-max K --checkpoints CSV --cache-mib 2048",
+    "corpus_sidecar_schema": "block01-corpus-v1",
+    "cpp": "availability(corpus_path,k_max,checkpoints,base_options)->AvailabilityResult",
+    "hashing": "corpus SHA256 updated from each input chunk in the scoring pass and verified at EOF",
+    "python": "block01.availability(corpus_path,k_max,checkpoints)->dict",
+    "result_schema": "block01-availability-surface-v1",
+    "surface_axes": [
+      "checkpoint",
+      "order"
+    ]
+  },
+  "artifact_directory": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/thread-storage/thr_363jypygh6",
+  "bindings": {
+    "delta_sha256": "52c60252e59d163913129f5fed30476e0fb8645802f3c739cbe454891928d762",
+    "freeze_sha256": "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036",
+    "prng_sha256": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542",
+    "protocol_sha256": "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2",
+    "requirements_sha256": "b11cda00385ec4701f4b82aee328d9445d91bf3a5260489112c565875ff16535"
+  },
+  "chronology": {
+    "experimental_corpora_before_this_freeze": 0,
+    "experimental_generator_samples_before_this_freeze": 0,
+    "generator_executable_invocations_before_this_freeze": [
+      "--help only; no PRNG construction or draw"
+    ],
+    "ordinary_engine_fixtures_before_this_freeze": true,
+    "ordinary_post_v1_generator_fixtures_before_this_freeze": true,
+    "post_v1_fixture_audit_sha256": "095881181383086479b35b98785a4aa460bbfba79a2c47577a372ea668036453",
+    "production_surfaces_before_this_freeze": 0,
+    "track_B_input_draws_preexisting_before_this_freeze": 25,
+    "track_B_input_draws_status": "pre-measurement frozen corpus inputs; no scored surfaces"
+  },
+  "created_utc": "2026-09-14T05:40:00Z",
+  "fixed_engine_settings": {
+    "cache_data_bytes": 2147483648,
+    "cache_page_bytes": 65536,
+    "cache_pages": 32768,
+    "count_store": "versioned append-only fixed records; bounded CLOCK cache; exact uint64 counts; in-progress stores invalid on crash; no resume claim",
+    "default_store_retention": "ephemeral store removed only after successful scoring/finalization and before result publication; --keep-store explicitly retains tail-only no-resume evidence",
+    "input_chunk_bytes": 65536,
+    "maximum_order": 16,
+    "production_workers": 1,
+    "publication": "result JSON written to a temporary file, fsynced, atomically renamed, and parent directory fsynced",
+    "track_A": {
+      "alphabet_size": 32,
+      "dense_depths": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "digit_bits": 5,
+      "node_record_bytes": 576,
+      "records_per_page": 113,
+      "tail_directory_depth": 4
+    },
+    "track_B": {
+      "alphabet_size": 256,
+      "dense_depths": [
+        0,
+        1
+      ],
+      "digit_bits": 8,
+      "node_record_bytes": 4160,
+      "records_per_page": 15,
+      "tail_directory_depth": 2
+    }
+  },
+  "independent_audit": {
+    "code_bugs_found": 0,
+    "engine_checks": "40/40",
+    "generator_checks": "142/142",
+    "release_and_sanitizer_ctest_rerun": "1/1 each passed",
+    "report_sha256": "65a18b61af6d62c4b033f01a5a79b6bffa8fa0ed9bc11380a34a8633bb7b6255",
+    "scope": "independent exact-reference and provenance audit before production measurement",
+    "total": "219/219",
+    "track_b_checks": "37/37"
+  },
+  "release_binary_sha256": {
+    "build/core_tests": "51c34e891a2cbe341a94e319b29636c318b5d65ce213de7b40761074928868a6",
+    "build/generate_corpus": "9bb8246bd0f246f54a678832d2d6eda23e8fff314caeee25add06868563a79f2",
+    "build/kt_stream": "18f42081f5efdb026da600fd1fd19543f0606977e98725d413f755a1c8bc268b",
+    "build/libblock01_kt.a": "db91ca0babc0fc413a40cc162c7d647b3db3bc8e42f1e8eabe8919dc55055776"
+  },
+  "reporting_release": {
+    "evaluator": "scripts/analyze_revb.py",
+    "input": "persisted complete primary surface JSON only; no rescoring",
+    "outputs": [
+      "all five-run mean and sample-std surfaces",
+      "per-run increments, linear-n finite differences and ridge",
+      "ten strict predictions with witnesses",
+      "three independent gates and conditional outcome",
+      "Annex summaries and limitations",
+      "cost/resource characterization and 2^30 sensitivity/bounds"
+    ],
+    "separability": "scripts/run_separability.py; refuses unless Correctness and Foundation pass; exact frozen global bijections only",
+    "supplementary_cost_benchmark": "scripts/run_cost_benchmarks.py; frozen G4/seed101 and B1/draw1, n=2^12,2^16,2^20,2^23, K=0,4,8,16, A then B, n then K, one repetition, fresh stores, 2GiB cache"
+  },
+  "schema": "block01-revb-execution-supplement-v3",
+  "source_sha256": {
+    "CMakeLists.txt": "83dc20b42996eeadba4c3feb0c1633c57713728313b630398bfebfc6398fabb9",
+    "TRACK_B_SOURCE_MANIFEST.json": "ffd70d8b0ba5777f216382db9cdd66908fb710a6ee87bb343050ab81ece816d1",
+    "block01.py": "58c250b5649015a1a2fe86aa9c611dcc0bfc5d5e943debb29cd662091b416035",
+    "design/prng_reference.hpp": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542",
+    "include/block01/kt_engine.hpp": "a58cea1b32d9d77cc12aeb3eb33e1a145dd90e05f1961f07efb2346d47cdd755",
+    "scripts/analyze_revb.py": "2b1ee750f3b950d3262d7362018cf1a4f80b62047c83fc9d4cc584716d49c718",
+    "scripts/run_cost_benchmarks.py": "2635e2fe86d8582a2c7dc73317b3b37c4c65770e706c11158bb328e8e34ff627",
+    "scripts/run_separability.py": "dda441b0831ae9457fdb88f05bec203cf8e6597483c0f19ef6d1d47eb522b3ad",
+    "scripts/run_track_a.py": "45f3e6a527dc03c20fa6f4c5f5f859c1b161f3be22f6921939b96da000925e26",
+    "scripts/run_track_b.py": "1c45cd281e95155a91b1f78a460c20e928429ea357c386edd74b87ffc3cf2068",
+    "src/generate_corpus.cpp": "d19d333053cc82df4bab120006493563471b39973773f4e2e5c284fde33d2d06",
+    "src/kt_engine.cpp": "85c57d1e8c773822dd3b2029e0ee17d28134506264e14fec1d60935924d913e5",
+    "src/kt_stream.cpp": "dd5b8a5bb4e096a1163a217ed0cd2baecd366f095c15e7e07dc560d81836446f",
+    "tests/core_tests.cpp": "914e784926b43cfc60ee310a7cbd4b2e1fd8cd6de1725a57e037d753bedb5917"
+  },
+  "status": "production_execution_released_track_a_and_track_b_before_measurement",
+  "supersedes_execution_supplement_sha256": "01ae4eb00783b257241982d1ddf2bbe0bf9adcefa92a55bd7c565bb901c56da4",
+  "toolchain": {
+    "build_type": "Release",
+    "cmake_version": "3.28.3",
+    "compile_definitions": [
+      "_FILE_OFFSET_BITS=64"
+    ],
+    "compiler_path": "/usr/bin/c++",
+    "compiler_sha256": "1353e9bdd29a7295c7226bf6c63abccce056d8cac31f112e5cdbecc3f28c2769",
+    "compiler_version": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "cxx_flags": "-O3 -DNDEBUG -std=c++20 -Wall -Wextra -Werror -ffp-contract=off",
+    "fast_math": false,
+    "generator": "Unix Makefiles",
+    "libc_sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf",
+    "libm_path": "/lib/x86_64-linux-gnu/libm.so.6",
+    "libm_sha256": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0",
+    "libstdcxx_sha256": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11",
+    "platform": "Linux DESKTOP-9BKM69O 6.18.33.2-microsoft-standard-WSL2 x86_64 GNU/Linux"
+  },
+  "track_A_release": {
+    "execution_order": "REVB_FREEZE.json configuration order then seed order",
+    "generator_provenance": "each G5 identity is generated independently and sidecar duplicate_provenance explicitly records frozen lag-2 identity; no silent replication claim",
+    "launcher": "scripts/run_track_a.py",
+    "launcher_validation": "SHA256-checks freeze and validates reused corpus/result run, freeze, execution-manifest, N, K and exact 12 checkpoint n-values.",
+    "measurement_authorized_by_this_file": true,
+    "reason": "independent correctness audit passed; V3 only hardens reused-result checkpoint-grid validation and adds frozen reporting/Track B launchers before any measured surface",
+    "registered_runs": 90
+  },
+  "track_B": {
+    "core_support_ready": true,
+    "corpus_hashes": {
+      "B1_draw1.bin": "c624fab34b9c392b5740e3eef4f2135bd0a7ec23f1dd640fa76c34d792603e99",
+      "B1_draw2.bin": "f9e1ac33b8332838dba6292c2990d36495e20dc4fb62c1e7fc79e8782a0e6e9d",
+      "B1_draw3.bin": "4455ab173e48d317259579f2604339c799eb3a8bf8d9a5d714627072caa8daaf",
+      "B1_draw4.bin": "27f4aeb640fbab533e369e046815cff5e9518e902cb7ecfc6bc87d24bbc954f4",
+      "B1_draw5.bin": "cc0a3324d1e76a7f99f4d71ab82e07101393bb24bf76db84eff67ed8c70cad07",
+      "B2_draw1.bin": "a7ec61e92fdb0c6f6fd2c8ddb132f3eb081864e95c257da0ee82a2125d2552d7",
+      "B2_draw2.bin": "2f95edfb7bf42e0c9ca8a2064855ed140ac2aea37276c04d5b9af5889edf9329",
+      "B2_draw3.bin": "58f324992d948b197dabcad4069cd299d7a061dd1e421a4eefdfeca29ef6156d",
+      "B2_draw4.bin": "ef6dac200573e404d961ff5075087b3e477e85c6748adeecfcbd056f158c2206",
+      "B2_draw5.bin": "619e008d69b04250536c4b286b15d5379b8c7eca0b94f1acac7e0a7c73c5b81c",
+      "B3_draw1.bin": "710c619b18c282dabca06b0e59112bb8e7ab7c86a31bac642e17fe2be8455d1b",
+      "B3_draw2.bin": "a5978cee24ed3f230d18f83b381be2b3a6bc600248be14a1ed3323649cbe2b94",
+      "B3_draw3.bin": "9b1b1ccd56f5124c8ff35cb44bd56490b535c25785a6e3153fab96ed84666265",
+      "B3_draw4.bin": "f036960b1fd74cda2e7df4c7c4c300183a9719c047ac295e0bf356e6aae648e6",
+      "B3_draw5.bin": "d58253c5debb625f2d172548096edffd6c3be6943573559887b75ae5c4d33a1e",
+      "B4_draw1.bin": "44b4e9275cb818d2bdc0de38a585e78e48d78eed36e2df364665deb358f05a65",
+      "B4_draw2.bin": "ba2c2dd275258ec8f16b958bba12f7362a6bc91fa7c13fa32e56cc73c10508f0",
+      "B4_draw3.bin": "79164cc4b82a26fedebc11d6eb144d9b2076ca9ca865da89c078d13bb5700b8b",
+      "B4_draw4.bin": "7b50d81b513383bb69f1ac8a94160f13bea70cca8bc60ecf4f52fd98bed7340e",
+      "B4_draw5.bin": "98d8310164c0beed00084e7befbc57a4a3b4f1951d6828bb790feb9ee973bd06",
+      "B5_draw1.bin": "951c5cbbf5c7b967d5a463aca4f9e52a1a753f953bc7b78fb665e4223476c37d",
+      "B5_draw2.bin": "2169d2403b54c98efa5dd9ada395290b0b27e153d939364dd10ead213e19ee5c",
+      "B5_draw3.bin": "097d3f5d51055da36ce2af9a0142a257cc559bbf2bab9864d797bdadcc58decb",
+      "B5_draw4.bin": "90d9df51961ae80c744649af919a76ea0aa76b0bd38210ab6b91c5239d435bfc",
+      "B5_draw5.bin": "65637779d632449ecb54abbaec61887040a4bb4f2802beda78ba2959fee86e04"
+    },
+    "corpus_integrity": "all 25 SHA256SUMS entries reverified before V3; audit independently regenerated all B4/B5 transforms and verified disjointness/structure",
+    "execution_order": "B1,B2,B3,B4,B5 then draw 1..5",
+    "launcher": "scripts/run_track_b.py",
+    "measurement_authorized_by_this_file": true,
+    "production_ready": true,
+    "provenance_bindings": {
+      "trackb/SOURCES.md": "87d7fefb1a86005ae6e87dbea79e785a95f73249d281063804dbeaf5b6146546",
+      "trackb/TRACK_B_HANDOFF.md": "6ca27b9d0ee6c63b9bae185585af7e1a49bbfccd2fef2861856d88844cc15a2b",
+      "trackb/build_draws_transforms.py": "ae9c90844093bd36d49cf8180c08262bcf65f7eb79bb6523cd4f818e97af606a",
+      "trackb/clean_chat.py": "408f2404bc0d330379c2539a991c0b33eeeddc5b0f11b470119337c96bfdd950",
+      "trackb/segment.py": "b12a9323fe0a6917376c731933b8778334f8b99288f75789bd9581cc3c41e3e2",
+      "trackb/splitmix64.py": "e0287cfaba9b36a7ad7bd73aa1732a64a334de94a014539f40c175aef7329711",
+      "trackb/wiki_extract.py": "62758a6bf06cb06ba11154abb16ca25fef457b8586f2d7ab27a04a5e50344636",
+      "trackb_corpora/SHA256SUMS.txt": "5f118d9313580137628993b5d33a2d92523cafe7aae56ada307bb2bea0fd65fb",
+      "trackb_corpora/draw_manifest.json": "ec22d96eab6348059954005b1b7127e78d1f464e5c79113c1232aa9f229a2258"
+    },
+    "registered_runs": 25,
+    "sidecars": "created before each first scoring pass, bound to this supplement hash and Track B source manifest hash; immutable mismatch rejects reuse",
+    "source_manifest": {
+      "path": "TRACK_B_SOURCE_MANIFEST.json",
+      "sha256": "ffd70d8b0ba5777f216382db9cdd66908fb710a6ee87bb343050ab81ece816d1"
+    }
+  },
+  "verification_before_this_freeze": {
+    "asan_ubsan_build": "passed",
+    "covered": [
+      "independent exact per-order KT reference for alphabets 32 and 256",
+      "startup and multiple checkpoints",
+      "full 128-bit depth-16 byte history",
+      "all byte values including 255 and Track A invalid byte 32",
+      "exact occupancy recurrence",
+      "incremental ML versus independent fixture reference",
+      "Track A predicted-symbol attribution",
+      "Track B ASCII-whitespace attribution and aligned prefix",
+      "one-page forced dirty spill versus larger cache with bit-identical KT losses",
+      "cache tombstone rebuild termination",
+      "small global-bijection invariance",
+      "mandatory/mismatched metadata rejection",
+      "CLI JSON schema and Python facade smoke checks"
+    ],
+    "ctest_asan_ubsan": "1/1 passed",
+    "ctest_release": "1/1 passed",
+    "release_build": "passed"
+  },
+  "workspace": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z"
+}

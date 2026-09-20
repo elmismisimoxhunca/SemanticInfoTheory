@@ -1,0 +1,202 @@
+[
+ {
+  "test": "a-tiny/schema",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "a-tiny/checkpoint_count",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "a-tiny",
+  "ok": true,
+  "detail": "5 checkpoints x 17 orders bit-exact (L, A, L_ML, occupancy, attribution)"
+ },
+ {
+  "test": "b-tiny/schema",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-tiny/checkpoint_count",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-tiny",
+  "ok": true,
+  "detail": "6 checkpoints x 17 orders bit-exact (L, A, L_ML, occupancy, attribution)"
+ },
+ {
+  "test": "a-n1/schema",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "a-n1/checkpoint_count",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "a-n1",
+  "ok": true,
+  "detail": "1 checkpoints x 17 orders bit-exact (L, A, L_ML, occupancy, attribution)"
+ },
+ {
+  "test": "a-n1/startup-exact",
+  "ok": true,
+  "detail": "L[k]=5.0 for all k at n=1"
+ },
+ {
+  "test": "a-chunk/schema",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "a-chunk/checkpoint_count",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "a-chunk",
+  "ok": true,
+  "detail": "7 checkpoints x 17 orders bit-exact (L, A, L_ML, occupancy, attribution)"
+ },
+ {
+  "test": "a-chunk/spilled",
+  "ok": true,
+  "detail": "evictions=3130"
+ },
+ {
+  "test": "a-chunk/spill-equivalence",
+  "ok": true,
+  "detail": "3-page vs 512-page cache bit-identical"
+ },
+ {
+  "test": "a-chunk/read-calls",
+  "ok": true,
+  "detail": "read_calls=2"
+ },
+ {
+  "test": "b-chunk/schema",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-chunk/checkpoint_count",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-chunk",
+  "ok": true,
+  "detail": "4 checkpoints x 17 orders bit-exact (L, A, L_ML, occupancy, attribution)"
+ },
+ {
+  "test": "b-chunk/spilled",
+  "ok": true,
+  "detail": "evictions=25871"
+ },
+ {
+  "test": "b-chunk/spill-equivalence",
+  "ok": true,
+  "detail": "2-page vs 256-page cache bit-identical"
+ },
+ {
+  "test": "b-128bit/schema",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-128bit/checkpoint_count",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-128bit",
+  "ok": true,
+  "detail": "1 checkpoints x 17 orders bit-exact (L, A, L_ML, occupancy, attribution)"
+ },
+ {
+  "test": "b-128bit/discriminates",
+  "ok": true,
+  "detail": "depth-16 loss differs from 64-bit-truncated analogue as designed"
+ },
+ {
+  "test": "a-validate/badorder rejected",
+  "ok": true,
+  "detail": "kt_stream: checkpoints must be positive, unique, and strictly increasing"
+ },
+ {
+  "test": "a-validate/beyondn rejected",
+  "ok": true,
+  "detail": "kt_stream: checkpoint exceeds sidecar expected_n"
+ },
+ {
+  "test": "a-validate/dup rejected",
+  "ok": true,
+  "detail": "kt_stream: checkpoints must be positive, unique, and strictly increasing"
+ },
+ {
+  "test": "a-validate/zero rejected",
+  "ok": true,
+  "detail": "kt_stream: checkpoints must be positive, unique, and strictly increasing"
+ },
+ {
+  "test": "a-badbyte/run rejected",
+  "ok": true,
+  "detail": "kt_stream: invalid corpus symbol 32 at byte offset 2"
+ },
+ {
+  "test": "b-mismatch/run rejected",
+  "ok": true,
+  "detail": "kt_stream: invalid track/alphabet metadata pair"
+ },
+ {
+  "test": "a-badhash/run rejected",
+  "ok": true,
+  "detail": "kt_stream: corpus SHA256 does not match sidecar"
+ },
+ {
+  "test": "a-extrabyte/run rejected",
+  "ok": true,
+  "detail": "kt_stream: corpus contains bytes beyond sidecar expected_n"
+ },
+ {
+  "test": "a-short/run rejected",
+  "ok": true,
+  "detail": "kt_stream: corpus length 3 does not match sidecar expected_n 4"
+ },
+ {
+  "test": "a-looks-b/run rejected",
+  "ok": true,
+  "detail": "kt_stream: invalid corpus symbol 250 at byte offset 4"
+ },
+ {
+  "test": "b-nows/schema",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-nows/checkpoint_count",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "b-nows",
+  "ok": true,
+  "detail": "1 checkpoints x 4 orders bit-exact (L, A, L_ML, occupancy, attribution)"
+ },
+ {
+  "test": "bijection-invariance",
+  "ok": true,
+  "detail": "symmetric KT bit-identical under global +7 mod 32 bijection"
+ },
+ {
+  "test": "python-api",
+  "ok": true,
+  "detail": ""
+ }
+]

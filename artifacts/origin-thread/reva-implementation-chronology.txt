@@ -1,0 +1,48 @@
+── User ────────────────────────────────────────────────────
+[BB workflow block-01 · run wfr_22b66566-3d08-418a-9d0a-540e8df7e7e1]
+
+Work in the origin workspace. Read PROTOCOL.md completely; it is FROZEN before any sampling. User requests actual execution, not a proposal. Never alter generators/constants/thresholds to get good curves. No deployments/restarts/credential changes. Keep artifact outputs in the origin storage path provided below as well as source-local results when needed. Use only allocated role; do not spawn agents. Document all missing requirements honestly. Origin artifact directory: /home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/thread-storage/thr_363jypygh6. Read DESIGN.md. Implement generators, exact KT production engine and Python public availability(corpus_path,k_max)->array wrapper, reproducible build, reference small-data coder and focused tests. You own core source and generator implementation. Freeze machine-readable constants, seeds and specified PRNG implementation using SHA256 into immutable preregistration BEFORE any generator execution, including smoke samples. Write commands/interfaces into README.md. Aim to execute full 30 x 1e7 on this host with bounded RAM exact disk-backed counts if feasible. Never fake bounded memory or substitute estimator. Follow design and explain any necessary deviation. Verify no future leakage, initial prefixes, alphabet size32 even unused symbols, k16 requiring80-bit contexts, counts overflow, deterministic arithmetic order, prefix key collisions, streaming chunk boundaries. Correctness test fixtures may run after freeze. Do NOT run full production experiments yet; next agents audit first. Save implementation notes. Design summary: {
+  "status": "design_and_audit_complete",
+  "design": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/thread-storage/thr_363jypygh6/DESIGN.md",
+  "source": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z/DESIGN.md",
+  "implementation_directions": [
+    "Use an exact reversed-history compressed radix trie, dense depths 0–3, disk-resident tail state, and a fixed 2 GiB writeback cache.",
+    "Preserve distinct startup semantics; share histograms only across provably identical compressed-path contexts.",
+    "Score every order before updating counts; preserve input-ordered binary64 accumulation.",
+    "Require forced-spill equivalence tests, bounded allocation accounting, and measured disk/I/O costs before production."
+  ],
+  "verified": [
+    "Protocol unchanged; source and artifact hashes match.",
+    "Storage probe compiled and executed; approximately 14,856 direct-read and 14,181 direct-write IOPS on small scratch workload.",
+    "Six analytical assertions passed.",
+    "PRNG reference frozen, hashed, and syntax-checked without sampling.",
+    "Deliverable manifests verified in both locations."
+  ],
+  "mathematical_findings": {
+    "lag_copy_entropy_bits": 1.9985035492800673,
+    "G3": "Phase confound quantified; oracle k=8 gain is 1/3 bit, versus maximum 2/9 for k=2..7. Finite-sample sparsity remains severe.",
+    "permutations": "Global bijections exactly preserve symmetric KT; requested across-class drop is impossible.",
+    "normalization": "Preserve negative denominators; exact zero is undefined; small denominators amplify differences."
+  },
+  "limitations": [
+    "No corpus generated or KT engine executed.",
+    "Engine implementation, runtime memory verification, and thirty full-size curves remain outstanding.",
+    "Full-run feasibility is not established; disk grows despite fixed RAM."
+  ]
+}
+
+Your final text IS the return value (not a human-facing message), so return raw data.
+
+── Ran 7 tools, explored 1 list, ran 1 command, edited 3 files
+
+── User ────────────────────────────────────────────────────
+[bb message from thread:thr_363jypygh6]
+
+User supplied post-start Annex A referring to an unavailable Rev B two-axis/Track B specification. Read ANNEX_A_INTEGRATION.md now and pass its path/action requirements in your workflow handoff. Continue original frozen run; do not alter frozen definitions/gates or add real corpora/checkpoint grids. Reporting should persist supported final-N increments/std/raw L as separate non-confirmatory annex artifacts, flag unavailable occupancy/attribution/cross-derivative unless already captured, no rerun for annex. Parent is asking user for missing Rev B; do not block original implementation on that clarification.
+steer
+
+── User ────────────────────────────────────────────────────
+[bb message from thread:thr_363jypygh6]
+
+URGENT user supplied superseding Rev B now. Pause all generator/test/benchmark execution and do not launch Rev A production. Preserve existing artifacts/logs. Report immediately whether any synthetic samples or result-dependent tests have executed, exact commands/times if known, and freeze status. Core coding may pause too while parent reconciles protocol. Do not delete or rewrite old freeze.
+steer

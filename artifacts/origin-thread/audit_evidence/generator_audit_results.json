@@ -1,0 +1,712 @@
+[
+ {
+  "test": "gen/G1/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G1/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G1/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G2/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G2/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G2/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G4/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G4/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G4/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(2)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(2)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(2)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(3)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(3)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(3)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(4)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(4)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(4)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(5)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(5)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(5)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(6)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(6)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(6)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(8)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(8)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(8)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(10)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(10)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(10)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(12)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(12)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(12)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(14)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(14)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(14)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(4)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(4)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G5(4)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(4)/s101/dup_provenance",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(4)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(4)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G6(4)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(8)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(8)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G5(8)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(8)/s101/dup_provenance",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(8)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(8)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G6(8)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(12)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(12)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G5(12)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(12)/s101/dup_provenance",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(12)/s101/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(12)/s101/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G6(12)/s101/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G1/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G1/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G1/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G2/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G2/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G2/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G4/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G4/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G4/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(2)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(2)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(2)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(3)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(3)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(3)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(4)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(4)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(4)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(5)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(5)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(5)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(6)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(6)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(6)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(8)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(8)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(8)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(10)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(10)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(10)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(12)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(12)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(12)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(14)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G3(14)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G3(14)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(4)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(4)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G5(4)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(4)/s505/dup_provenance",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(4)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(4)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G6(4)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(8)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(8)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G5(8)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(8)/s505/dup_provenance",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(8)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(8)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G6(8)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(12)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(12)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G5(12)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5(12)/s505/dup_provenance",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(12)/s505/ran",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G6(12)/s505/bytes",
+  "ok": true,
+  "detail": "4096 bytes identical to independent reference"
+ },
+ {
+  "test": "gen/G6(12)/s505/sidecar",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "gen/G5-triplicate",
+  "ok": true,
+  "detail": "G5(4)=G5(8)=G5(12) byte streams identical for seed 202"
+ },
+ {
+  "test": "gen/G3(14)-structure",
+  "ok": true,
+  "detail": "controller 16..23, filler 0..15, agreement=controller+8 at lag 14"
+ },
+ {
+  "test": "gen/G3(14)-truncation",
+  "ok": true,
+  "detail": "last block truncated without completion draws"
+ },
+ {
+  "test": "entropy/lag-copy-rate",
+  "ok": true,
+  "detail": "h=1.9985035492800673"
+ },
+ {
+  "test": "entropy/G3(2)",
+  "ok": true,
+  "detail": "rate=2.333333 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(3)",
+  "ok": true,
+  "detail": "rate=2.750000 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(4)",
+  "ok": true,
+  "detail": "rate=3.000000 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(5)",
+  "ok": true,
+  "detail": "rate=3.166667 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(6)",
+  "ok": true,
+  "detail": "rate=3.285714 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(8)",
+  "ok": true,
+  "detail": "rate=3.444444 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(10)",
+  "ok": true,
+  "detail": "rate=3.545455 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(12)",
+  "ok": true,
+  "detail": "rate=3.615385 bits/symbol"
+ },
+ {
+  "test": "entropy/G3(14)",
+  "ok": true,
+  "detail": "rate=3.666667 bits/symbol"
+ },
+ {
+  "test": "entropy/G4",
+  "ok": true,
+  "detail": "5.0 bits/symbol (uniform iid on 32)"
+ },
+ {
+  "test": "entropy/G5-G6-match",
+  "ok": true,
+  "detail": "paired G5/G6 lag-copy kernels share identical coin/innovation structure: entropy difference exactly 0 (< 0.02)"
+ },
+ {
+  "test": "prng/threshold(4)",
+  "ok": true,
+  "detail": "no rejection possible"
+ },
+ {
+  "test": "prng/threshold(8)",
+  "ok": true,
+  "detail": "no rejection possible"
+ },
+ {
+  "test": "prng/threshold(16)",
+  "ok": true,
+  "detail": "no rejection possible"
+ },
+ {
+  "test": "prng/threshold(32)",
+  "ok": true,
+  "detail": "no rejection possible"
+ },
+ {
+  "test": "guard/production-n",
+  "ok": true,
+  "detail": "generate_corpus: production Track A corpus length must equal 2^23; use --fixture only for deterministic implementation f"
+ },
+ {
+  "test": "guard/seed-registry",
+  "ok": true,
+  "detail": "generate_corpus: seed is not registered in Rev B"
+ },
+ {
+  "test": "guard/g3-distance",
+  "ok": true,
+  "detail": "generate_corpus: unregistered G3 distance"
+ },
+ {
+  "test": "chronology/source-unchanged-v1-v2",
+  "ok": true,
+  "detail": "only declared launcher amendment changed: ['scripts/run_track_a.py']"
+ },
+ {
+  "test": "chronology/binaries-unchanged-v1-v2",
+  "ok": true,
+  "detail": "all release binary hashes identical"
+ },
+ {
+  "test": "chronology/fixtures-after-v1",
+  "ok": true,
+  "detail": "fixture audit 2026-09-14T05:07:00Z bound to v1 2026-09-14T05:05:00Z"
+ },
+ {
+  "test": "chronology/v2-after-fixtures",
+  "ok": true,
+  "detail": "v2 2026-09-14T05:08:52Z"
+ },
+ {
+  "test": "chronology/prng-hash",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "chronology/prng-file",
+  "ok": true,
+  "detail": ""
+ }
+]

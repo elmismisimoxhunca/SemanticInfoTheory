@@ -1,0 +1,187 @@
+[
+ {
+  "test": "inventory/25-files",
+  "ok": true,
+  "detail": "25 draw files"
+ },
+ {
+  "test": "inventory/sizes+sha256sums",
+  "ok": true,
+  "detail": "25 x 2^23 bytes, all digests match"
+ },
+ {
+  "test": "inventory/manifest-consistency",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "disjoint/B1-pairwise-distinct",
+  "ok": true,
+  "detail": "draws are consecutive non-overlapping 2^23 slices by frozen construction (build_draws_transforms.py: stream[d*CHUNK:(d+1)*CHUNK]); verified pairwise distinct"
+ },
+ {
+  "test": "disjoint/B2-pairwise-distinct",
+  "ok": true,
+  "detail": "draws are consecutive non-overlapping 2^23 slices by frozen construction (build_draws_transforms.py: stream[d*CHUNK:(d+1)*CHUNK]); verified pairwise distinct"
+ },
+ {
+  "test": "disjoint/B3-pairwise-distinct",
+  "ok": true,
+  "detail": "draws are consecutive non-overlapping 2^23 slices by frozen construction (build_draws_transforms.py: stream[d*CHUNK:(d+1)*CHUNK]); verified pairwise distinct"
+ },
+ {
+  "test": "transform/B4_draw1-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+SplitMix64 Fisher-Yates reproduces published bytes"
+ },
+ {
+  "test": "transform/B5_draw1-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+continuing-stream word shuffle reproduces published bytes"
+ },
+ {
+  "test": "control/B4_draw1-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B5_draw1-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B4_draw1-prefix-suffix-fixed",
+  "ok": true,
+  "detail": "63087 units"
+ },
+ {
+  "test": "control/B5_draw1-whitespace-fixed",
+  "ok": true,
+  "detail": "token kind pattern and W bytes identical per unit; T multiset preserved"
+ },
+ {
+  "test": "transform/B4_draw2-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+SplitMix64 Fisher-Yates reproduces published bytes"
+ },
+ {
+  "test": "transform/B5_draw2-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+continuing-stream word shuffle reproduces published bytes"
+ },
+ {
+  "test": "control/B4_draw2-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B5_draw2-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B4_draw2-prefix-suffix-fixed",
+  "ok": true,
+  "detail": "62506 units"
+ },
+ {
+  "test": "control/B5_draw2-whitespace-fixed",
+  "ok": true,
+  "detail": "token kind pattern and W bytes identical per unit; T multiset preserved"
+ },
+ {
+  "test": "transform/B4_draw3-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+SplitMix64 Fisher-Yates reproduces published bytes"
+ },
+ {
+  "test": "transform/B5_draw3-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+continuing-stream word shuffle reproduces published bytes"
+ },
+ {
+  "test": "control/B4_draw3-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B5_draw3-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B4_draw3-prefix-suffix-fixed",
+  "ok": true,
+  "detail": "62814 units"
+ },
+ {
+  "test": "control/B5_draw3-whitespace-fixed",
+  "ok": true,
+  "detail": "token kind pattern and W bytes identical per unit; T multiset preserved"
+ },
+ {
+  "test": "transform/B4_draw4-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+SplitMix64 Fisher-Yates reproduces published bytes"
+ },
+ {
+  "test": "transform/B5_draw4-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+continuing-stream word shuffle reproduces published bytes"
+ },
+ {
+  "test": "control/B4_draw4-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B5_draw4-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B4_draw4-prefix-suffix-fixed",
+  "ok": true,
+  "detail": "66880 units"
+ },
+ {
+  "test": "control/B5_draw4-whitespace-fixed",
+  "ok": true,
+  "detail": "token kind pattern and W bytes identical per unit; T multiset preserved"
+ },
+ {
+  "test": "transform/B4_draw5-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+SplitMix64 Fisher-Yates reproduces published bytes"
+ },
+ {
+  "test": "transform/B5_draw5-regeneration",
+  "ok": true,
+  "detail": "independent segmentation+continuing-stream word shuffle reproduces published bytes"
+ },
+ {
+  "test": "control/B4_draw5-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B5_draw5-length-multiset",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "test": "control/B4_draw5-prefix-suffix-fixed",
+  "ok": true,
+  "detail": "62781 units"
+ },
+ {
+  "test": "control/B5_draw5-whitespace-fixed",
+  "ok": true,
+  "detail": "token kind pattern and W bytes identical per unit; T multiset preserved"
+ },
+ {
+  "test": "seeds/disjoint-from-track-A",
+  "ok": true,
+  "detail": ""
+ }
+]

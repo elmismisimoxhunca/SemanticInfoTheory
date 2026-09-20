@@ -1,0 +1,53 @@
+{
+  "thread": {
+    "id": "thr_8rgzgygukh",
+    "projectId": "proj_personal",
+    "environmentId": "env_sveaeeem4z",
+    "providerId": "pi",
+    "title": "Sol: implement and freeze engine",
+    "titleFallback": "[BB workflow block-01 · run wfr_22b66566-3d08-418a-9d0a-540e8df7e7e1] Work in...",
+    "sectionId": null,
+    "status": "idle",
+    "parentThreadId": null,
+    "sourceThreadId": null,
+    "originKind": null,
+    "childOrigin": null,
+    "originPluginId": "workflows",
+    "visibility": "hidden",
+    "archivedAt": null,
+    "pinnedAt": null,
+    "deletedAt": null,
+    "lastReadAt": 1789359907278,
+    "latestAttentionAt": 1789360296934,
+    "createdAt": 1789359907267,
+    "updatedAt": 1789360296934,
+    "runtime": {
+      "displayStatus": "idle",
+      "hostReconnectGraceExpiresAt": null
+    },
+    "activeBackgroundAgentCount": 0,
+    "canSpawnChild": true
+  },
+  "environment": {
+    "id": "env_sveaeeem4z",
+    "name": null,
+    "projectId": "proj_personal",
+    "hostId": "host_hkr9k292wz",
+    "path": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z",
+    "managed": true,
+    "isGitRepo": false,
+    "isWorktree": false,
+    "workspaceProvisionType": "personal",
+    "branchName": null,
+    "baseBranch": null,
+    "defaultBranch": null,
+    "mergeBaseBranch": null,
+    "status": "ready",
+    "createdAt": 1789358897028,
+    "updatedAt": 1789358897215,
+    "pullRequest": {
+      "status": "none",
+      "pullRequest": null
+    }
+  }
+}

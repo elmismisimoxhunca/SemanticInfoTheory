@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-09-14T04:23:27.731632+00:00",
+  "workspace": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z",
+  "origin_artifact_directory": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/thread-storage/thr_363jypygh6",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "cpu_logical_count": 8,
+  "memory_snapshot": {
+    "MemTotal_bytes": 16730673152,
+    "MemAvailable_bytes": 14241337344,
+    "SwapTotal_bytes": 4294967296,
+    "SwapFree_bytes": 4294967296
+  },
+  "filesystem": {
+    "total_bytes": 1081101176832,
+    "available_bytes": 769850257408,
+    "block_size": 4096
+  },
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "python": "3.12.3",
+  "cgroup_limit_observation": "No root v2 memory.max/cpu.max/io.max or searched v1 memory.limit_in_bytes/cpu.cfs_quota_us/cpu.cfs_period_us candidates accessible; no per-worker reservation inferred.",
+  "no_corpus_generated_by_this_role": true,
+  "kt_engine_implemented_or_executed_by_this_role": false
+}

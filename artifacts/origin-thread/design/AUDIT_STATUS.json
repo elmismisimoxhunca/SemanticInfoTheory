@@ -1,0 +1,29 @@
+{
+  "role": "exact KT streaming storage feasibility and mathematical audit",
+  "status": "design_and_audit_complete_not_experiment_complete",
+  "protocol_sha256": "4191447aa5255363f454125746ea9a551539f9b5cca81ebccc39f7572897ae0f",
+  "prng_reference_sha256": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542",
+  "recommended_engine": "Exact reversed-history compressed radix trie; dense depths 0..3; disk-resident tail/allocator; fixed 2 GiB page cache with lossless dirty writeback; all k scored in one input pass",
+  "executed": [
+    "Read entire frozen protocol and verified matching source/origin hashes",
+    "Inspected host memory, CPU, filesystem, toolchain, and accessible resource limits",
+    "Compiled and ran deterministic 64 MiB storage-only probe; removed scratch and binary",
+    "Ran analytical entropy, G3 phase, and occupancy calculations with six assertions",
+    "Syntax-compiled frozen PRNG reference without constructing it or drawing samples"
+  ],
+  "corpora_generated": 0,
+  "production_curves_executed": 0,
+  "kt_engine_implemented": false,
+  "bounded_ram_runtime_verified": false,
+  "full_run_feasibility_established": false,
+  "unavoidable_contradiction": "Every global bijective relabeling preserves symmetric KT probabilities exactly; the requested across-class drop is impossible",
+  "remaining": [
+    "Implement/test exact trie/cache/API and prove spill equivalence with fixed memory",
+    "Bind actual generator/PRNG/constants/executable pre-sampling manifests",
+    "Measure KT costs, peak RSS, disk growth, I/O, and one-pass behavior at multiple N and k",
+    "Execute thirty full-size registered curves when feasible; retain failures/incomplete evidence honestly",
+    "Analyze saved curves and execute production permutations only if Go"
+  ],
+  "no_protocol_generator_threshold_deployment_restart_or_credential_changes": true,
+  "agents_spawned": 0
+}

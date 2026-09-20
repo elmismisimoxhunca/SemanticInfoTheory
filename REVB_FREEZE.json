@@ -1,0 +1,3027 @@
+{
+  "schema": "block01-revb-operational-freeze-v1",
+  "created_utc": "2026-09-14T04:41:52.926016+00:00",
+  "status": "operational_preregistration_frozen_execution_release_pending",
+  "workspace": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z",
+  "artifact_directory": "/home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/thread-storage/thr_363jypygh6",
+  "authority": {
+    "path": "REVB_REQUIREMENTS.md",
+    "sha256": "b11cda00385ec4701f4b82aee328d9445d91bf3a5260489112c565875ff16535"
+  },
+  "protocol": {
+    "path": "REVB_PROTOCOL.md",
+    "sha256": "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2"
+  },
+  "delta": {
+    "path": "REVB_DELTA.md",
+    "sha256": "52c60252e59d163913129f5fed30476e0fb8645802f3c739cbe454891928d762"
+  },
+  "historical_reuse": {
+    "design": {
+      "path": "DESIGN.md",
+      "sha256": "e4a3bb7dc83b589c060658e3d97517aa3eed657164a1becfe4180bb0af55d2b7",
+      "reuse": "compressed_trie_exact_state_proof_PRNG_lag_copy_only; obsolete statistical scope excluded"
+    },
+    "superseded": [
+      "PROTOCOL.md",
+      "PROTOCOL.sha256",
+      "ANNEX_A_INTEGRATION.md"
+    ]
+  },
+  "execution_release": {
+    "ready": false,
+    "measurement_performed_by_this_role": false,
+    "sampling_performed_by_this_role": false,
+    "requirements_before_sampling": [
+      "immutable supplement binds this manifest SHA256",
+      "actual generator/ingestion/engine/evaluator source hashes",
+      "actual executable hashes and compiler/build flags/libm/platform identity",
+      "passing deterministic correctness and forced-spill fixtures",
+      "fixed resource settings and output schema bound",
+      "Track B additionally requires Sonnet source manifest before B sampling"
+    ],
+    "corpus_hashes": "stream during generation/ingestion; finalize sidecar before scoring; verify in scoring pass",
+    "amendments": "append_only; never tune from surfaces; independently justified fixes invalidate affected results explicitly",
+    "track_A_may_release_without_track_B_sources": true
+  },
+  "measure": {
+    "name": "prequential_exact_KT_add_half",
+    "formula": "A(k,n)=(L(0,n)-L(k,n))/n",
+    "orders": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "k_max": 16,
+    "n": 8388608,
+    "checkpoints": [
+      4096,
+      8192,
+      16384,
+      32768,
+      65536,
+      131072,
+      262144,
+      524288,
+      1048576,
+      2097152,
+      4194304,
+      8388608
+    ],
+    "surface_axes": [
+      "checkpoint",
+      "order"
+    ],
+    "units": "bits_per_input_symbol",
+    "track_A_alphabet": 32,
+    "track_B_alphabet": 256,
+    "input_unit": "unsigned_byte",
+    "passes_per_primary_surface": 1,
+    "score_before_update": true,
+    "startup": {
+      "when": "i<k, zero_based_i",
+      "loss": "log2(S), exactly 5.0 for A or 8.0 for B",
+      "update_shorter_full_order_row_on_behalf_of_unavailable_order": false,
+      "initial_history": "empty",
+      "history_resets": "none"
+    },
+    "row_loss_expression": "total==0 ? log2(S) : -std::log2((double(count)+0.5)/(double(total)+double(S)/2.0))",
+    "accumulation": "binary64_input_order_per_order",
+    "fast_math": false,
+    "fp_contract": "off",
+    "backoff": false,
+    "negative_A": "retain"
+  },
+  "sidecar": {
+    "path_rule": "str(corpus_path)+\".meta.json\"",
+    "schema": "block01-corpus-v1",
+    "required_fields": [
+      "track",
+      "alphabet_size",
+      "expected_n",
+      "run_id",
+      "corpus_sha256",
+      "protocol_sha256",
+      "freeze_sha256",
+      "execution_manifest_sha256"
+    ],
+    "track_A_additional_fields": [
+      "configuration",
+      "seed"
+    ],
+    "track_B_additional_fields": [
+      "source_manifest_sha256",
+      "corpus",
+      "draw_id",
+      "transformation_provenance"
+    ],
+    "accepted_track_alphabet_pairs": [
+      [
+        "A",
+        32
+      ],
+      [
+        "B",
+        256
+      ]
+    ],
+    "inference": "forbidden",
+    "missing_mismatch_or_invalid": "error",
+    "corpus_digest_and_length_verification": "same_scoring_pass_before_complete_publication"
+  },
+  "prng": {
+    "path": "design/prng_reference.hpp",
+    "sha256": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542",
+    "algorithm": "SplitMix64",
+    "state_bits": 64,
+    "initial_state": "uint64(seed)",
+    "warmup_draws": 0,
+    "name_mixing": false,
+    "reset": "fresh_per_configuration_seed",
+    "uniform": "threshold=(uint64(0)-bound)%bound; draw until value>=threshold; return value%bound",
+    "wraparound": "unsigned_modulo_2^64",
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "bounds_used": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "stop": "exactly_N_no_unneeded_trailing_draws"
+  },
+  "track_A": {
+    "alphabet_size": 32,
+    "configuration_count": 18,
+    "seed_count": 5,
+    "primary_surface_count": 90,
+    "configurations": [
+      {
+        "id": "G1",
+        "family": "lag_copy",
+        "lag": 1
+      },
+      {
+        "id": "G2",
+        "family": "lag_copy",
+        "lag": 5
+      },
+      {
+        "id": "G3(2)",
+        "family": "agreement_block",
+        "d": 2,
+        "period": 3,
+        "fillers_per_block": 1,
+        "entropy_rate_bits": {
+          "numerator": 7,
+          "denominator": 3
+        }
+      },
+      {
+        "id": "G3(3)",
+        "family": "agreement_block",
+        "d": 3,
+        "period": 4,
+        "fillers_per_block": 2,
+        "entropy_rate_bits": {
+          "numerator": 11,
+          "denominator": 4
+        }
+      },
+      {
+        "id": "G3(4)",
+        "family": "agreement_block",
+        "d": 4,
+        "period": 5,
+        "fillers_per_block": 3,
+        "entropy_rate_bits": {
+          "numerator": 15,
+          "denominator": 5
+        }
+      },
+      {
+        "id": "G3(5)",
+        "family": "agreement_block",
+        "d": 5,
+        "period": 6,
+        "fillers_per_block": 4,
+        "entropy_rate_bits": {
+          "numerator": 19,
+          "denominator": 6
+        }
+      },
+      {
+        "id": "G3(6)",
+        "family": "agreement_block",
+        "d": 6,
+        "period": 7,
+        "fillers_per_block": 5,
+        "entropy_rate_bits": {
+          "numerator": 23,
+          "denominator": 7
+        }
+      },
+      {
+        "id": "G3(8)",
+        "family": "agreement_block",
+        "d": 8,
+        "period": 9,
+        "fillers_per_block": 7,
+        "entropy_rate_bits": {
+          "numerator": 31,
+          "denominator": 9
+        }
+      },
+      {
+        "id": "G3(10)",
+        "family": "agreement_block",
+        "d": 10,
+        "period": 11,
+        "fillers_per_block": 9,
+        "entropy_rate_bits": {
+          "numerator": 39,
+          "denominator": 11
+        }
+      },
+      {
+        "id": "G3(12)",
+        "family": "agreement_block",
+        "d": 12,
+        "period": 13,
+        "fillers_per_block": 11,
+        "entropy_rate_bits": {
+          "numerator": 47,
+          "denominator": 13
+        }
+      },
+      {
+        "id": "G3(14)",
+        "family": "agreement_block",
+        "d": 14,
+        "period": 15,
+        "fillers_per_block": 13,
+        "entropy_rate_bits": {
+          "numerator": 55,
+          "denominator": 15
+        }
+      },
+      {
+        "id": "G4",
+        "family": "iid_uniform",
+        "matched_to": "G2_theoretical_unigram"
+      },
+      {
+        "id": "G5(4)",
+        "family": "lag_copy",
+        "pair_d": 4,
+        "lag": 2
+      },
+      {
+        "id": "G6(4)",
+        "family": "lag_copy",
+        "pair_d": 4,
+        "lag": 4
+      },
+      {
+        "id": "G5(8)",
+        "family": "lag_copy",
+        "pair_d": 8,
+        "lag": 2
+      },
+      {
+        "id": "G6(8)",
+        "family": "lag_copy",
+        "pair_d": 8,
+        "lag": 8
+      },
+      {
+        "id": "G5(12)",
+        "family": "lag_copy",
+        "pair_d": 12,
+        "lag": 2
+      },
+      {
+        "id": "G6(12)",
+        "family": "lag_copy",
+        "pair_d": 12,
+        "lag": 12
+      }
+    ],
+    "execution_order": "configuration array order, then ascending seed array order",
+    "kernels": {
+      "lag_copy": {
+        "initialization": "i<lag: emit uniform(32), no copy coin",
+        "later_draw_order": [
+          "coin=uniform(4)",
+          "innovation=uniform(32), even on copy"
+        ],
+        "emission": "coin<3 ? x[i-lag] : innovation",
+        "copy_probability": "3/4",
+        "innovation_probability": "1/4",
+        "conditional_probabilities": {
+          "lag_symbol": "97/128",
+          "each_other_symbol": "1/128"
+        },
+        "stationary_unigram": "uniform32",
+        "entropy_rate_formula": "-(97/128)*log2(97/128)-31*(1/128)*log2(1/128)",
+        "entropy_rate_bits": 1.9985035492800673,
+        "paired_entropy_difference": 0
+      },
+      "agreement_block": {
+        "phase_start": 0,
+        "period": "d+1",
+        "controller_symbols": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "filler_symbols": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "agreeing_symbols": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "phase0": "controller=16+uniform(8); emit controller",
+        "phase1_through_d_minus1": "emit uniform(16), one draw per position",
+        "phase_d": "emit controller+8, no draw",
+        "phase_randomization": false,
+        "entropy_rate": "(4*d-1)/(d+1)",
+        "stationary_under_single_symbol_shift": false
+      },
+      "iid_uniform": {
+        "per_symbol": "emit uniform(32)",
+        "entropy_rate_bits": 5,
+        "matching": "G2 theoretical stationary marginal, not sample histogram"
+      }
+    },
+    "intentional_duplicate_seed_streams": [
+      "G5(4)",
+      "G5(8)",
+      "G5(12)"
+    ],
+    "runs": [
+      {
+        "run_id": "A_G1_s101",
+        "configuration": "G1",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G1_s202",
+        "configuration": "G1",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G1_s303",
+        "configuration": "G1",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G1_s404",
+        "configuration": "G1",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G1_s505",
+        "configuration": "G1",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G2_s101",
+        "configuration": "G2",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G2_s202",
+        "configuration": "G2",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G2_s303",
+        "configuration": "G2",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G2_s404",
+        "configuration": "G2",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G2_s505",
+        "configuration": "G2",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d2_s101",
+        "configuration": "G3(2)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d2_s202",
+        "configuration": "G3(2)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d2_s303",
+        "configuration": "G3(2)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d2_s404",
+        "configuration": "G3(2)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d2_s505",
+        "configuration": "G3(2)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d3_s101",
+        "configuration": "G3(3)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d3_s202",
+        "configuration": "G3(3)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d3_s303",
+        "configuration": "G3(3)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d3_s404",
+        "configuration": "G3(3)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d3_s505",
+        "configuration": "G3(3)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d4_s101",
+        "configuration": "G3(4)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d4_s202",
+        "configuration": "G3(4)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d4_s303",
+        "configuration": "G3(4)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d4_s404",
+        "configuration": "G3(4)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d4_s505",
+        "configuration": "G3(4)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d5_s101",
+        "configuration": "G3(5)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d5_s202",
+        "configuration": "G3(5)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d5_s303",
+        "configuration": "G3(5)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d5_s404",
+        "configuration": "G3(5)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d5_s505",
+        "configuration": "G3(5)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d6_s101",
+        "configuration": "G3(6)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d6_s202",
+        "configuration": "G3(6)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d6_s303",
+        "configuration": "G3(6)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d6_s404",
+        "configuration": "G3(6)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d6_s505",
+        "configuration": "G3(6)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d8_s101",
+        "configuration": "G3(8)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d8_s202",
+        "configuration": "G3(8)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d8_s303",
+        "configuration": "G3(8)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d8_s404",
+        "configuration": "G3(8)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d8_s505",
+        "configuration": "G3(8)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d10_s101",
+        "configuration": "G3(10)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d10_s202",
+        "configuration": "G3(10)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d10_s303",
+        "configuration": "G3(10)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d10_s404",
+        "configuration": "G3(10)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d10_s505",
+        "configuration": "G3(10)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d12_s101",
+        "configuration": "G3(12)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d12_s202",
+        "configuration": "G3(12)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d12_s303",
+        "configuration": "G3(12)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d12_s404",
+        "configuration": "G3(12)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d12_s505",
+        "configuration": "G3(12)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d14_s101",
+        "configuration": "G3(14)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d14_s202",
+        "configuration": "G3(14)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d14_s303",
+        "configuration": "G3(14)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d14_s404",
+        "configuration": "G3(14)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G3_d14_s505",
+        "configuration": "G3(14)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G4_s101",
+        "configuration": "G4",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G4_s202",
+        "configuration": "G4",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G4_s303",
+        "configuration": "G4",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G4_s404",
+        "configuration": "G4",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G4_s505",
+        "configuration": "G4",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d4_s101",
+        "configuration": "G5(4)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d4_s202",
+        "configuration": "G5(4)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d4_s303",
+        "configuration": "G5(4)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d4_s404",
+        "configuration": "G5(4)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d4_s505",
+        "configuration": "G5(4)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d4_s101",
+        "configuration": "G6(4)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d4_s202",
+        "configuration": "G6(4)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d4_s303",
+        "configuration": "G6(4)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d4_s404",
+        "configuration": "G6(4)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d4_s505",
+        "configuration": "G6(4)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d8_s101",
+        "configuration": "G5(8)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d8_s202",
+        "configuration": "G5(8)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d8_s303",
+        "configuration": "G5(8)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d8_s404",
+        "configuration": "G5(8)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d8_s505",
+        "configuration": "G5(8)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d8_s101",
+        "configuration": "G6(8)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d8_s202",
+        "configuration": "G6(8)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d8_s303",
+        "configuration": "G6(8)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d8_s404",
+        "configuration": "G6(8)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d8_s505",
+        "configuration": "G6(8)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d12_s101",
+        "configuration": "G5(12)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d12_s202",
+        "configuration": "G5(12)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d12_s303",
+        "configuration": "G5(12)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d12_s404",
+        "configuration": "G5(12)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G5_d12_s505",
+        "configuration": "G5(12)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d12_s101",
+        "configuration": "G6(12)",
+        "seed": 101,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d12_s202",
+        "configuration": "G6(12)",
+        "seed": 202,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d12_s303",
+        "configuration": "G6(12)",
+        "seed": 303,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d12_s404",
+        "configuration": "G6(12)",
+        "seed": 404,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      },
+      {
+        "run_id": "A_G6_d12_s505",
+        "configuration": "G6(12)",
+        "seed": 505,
+        "track": "A",
+        "alphabet_size": 32,
+        "n": 8388608,
+        "k_max": 16,
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536,
+          131072,
+          262144,
+          524288,
+          1048576,
+          2097152,
+          4194304,
+          8388608
+        ]
+      }
+    ]
+  },
+  "track_B": {
+    "alphabet_size": 256,
+    "corpora": [
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5"
+    ],
+    "draws_per_corpus": 5,
+    "draw_order": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "primary_surface_count": 25,
+    "source_freeze_owner": "Sonnet",
+    "source_manifest_status": "pending_owner_not_fabricated_here",
+    "source_manifest_sha256": null,
+    "B_measurement_allowed_without_source_freeze": false,
+    "source_requirements": [
+      "public exact snapshots and licenses and hashes",
+      "B1 English Wikipedia prose",
+      "B2 one declared source language",
+      "B3 adult child-directed CHILDES speech only, adequacy verified",
+      "normalization extraction and eligible unit ordering",
+      "disjoint draw algorithm and disjointness scope",
+      "B4 sentence shuffle of corresponding B1 draw",
+      "B5 within-sentence word shuffle of corresponding B1 draw",
+      "segmentation and shuffle seeds",
+      "byte multiset and exact length preservation for B4/B5",
+      "boundary truncation and whitespace conventions",
+      "no padding duplication substitution or non-directed speech to conceal shortage"
+    ]
+  },
+  "evaluation": {
+    "mean": "pointwise ordered sum of five raw surfaces divided by 5",
+    "seed_order": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "draw_order": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sample_std": "sqrt(ordered_sum((A_r-mean_A)^2)/4)",
+    "diagnostics_of_mean": "compute after raw pointwise averaging",
+    "individual_diagnostics": "persist all, do not substitute their mean for diagnostics of mean",
+    "Delta": "M(k,n)-M(k-1,n), k=1..16",
+    "D": "max over all registered k,n of abs(U(k,n)-V(k,n))",
+    "N": 8388608,
+    "strict_comparison": "unrounded saved binary64-derived values, no epsilon",
+    "unique_largest": "strictly exceeds all other increments, any exact tie fails",
+    "display_argmax_tie": "lexicographic_first_only_for_witness",
+    "undefined": {
+      "zero_denominators": "null with reason, not pass",
+      "nonfinite_json": "forbidden",
+      "required_undefined_check": "undefined_not_pass",
+      "missing_input": "incomplete_not_false_experimental_verdict"
+    },
+    "negative_denominators": "retain_sign_no_replacement",
+    "small_denominators": "use_unchanged_report_magnification",
+    "normalization_order": "mean_first_divide_second",
+    "cross_track_comparisons": false,
+    "first_increment_below": {
+      "increments": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "threshold": 0.01,
+      "comparison": "strict_less",
+      "selection": "smallest_k",
+      "none": {
+        "ordinal": 17,
+        "flag": "right_censored_above_16"
+      },
+      "sentinel_comparison": "ordered_integer_category_17",
+      "interpretation": "explicit_operational_first_below_not_sustained_saturation"
+    },
+    "predictions": [
+      {
+        "id": 1,
+        "track": "A",
+        "configuration": "G1",
+        "expression": "Delta(2,N) < 0.01"
+      },
+      {
+        "id": 2,
+        "track": "A",
+        "configuration": "G2",
+        "expression": "Delta(6,N) < 0.01 AND Delta(5,N) > 0.05"
+      },
+      {
+        "id": 3,
+        "track": "A",
+        "configurations": [
+          "G3(2)",
+          "G3(3)",
+          "G3(4)",
+          "G3(5)",
+          "G3(6)",
+          "G3(8)",
+          "G3(10)",
+          "G3(12)",
+          "G3(14)"
+        ],
+        "quantifier": "all_d",
+        "expression": "Delta(d,N) > 0.05 AND forall k in 1..16 except d: Delta(d,N) > Delta(k,N)",
+        "ties": "fail_unique_maximum",
+        "increment_comparison_includes_k1": true
+      },
+      {
+        "id": 4,
+        "track": "A",
+        "configuration": "G4",
+        "expression": "forall k in 1..16: M(k,N) < 0.01",
+        "one_sided": true
+      },
+      {
+        "id": 5,
+        "track": "A",
+        "pair_distances": [
+          4,
+          8,
+          12
+        ],
+        "expression": "forall d: max_k(abs(M_G5(d)(k,N)-M_G6(d)(k,N))) > 0.1",
+        "k_range_inclusive": [
+          0,
+          16
+        ],
+        "n": "N_only"
+      },
+      {
+        "id": 6,
+        "track": "A",
+        "configuration": "G2",
+        "expression": "forall adjacent checkpoints: R(n_next) >= R(n_previous); AND R(16384) < R(8388608)",
+        "ridge_definition": "first_increment_below",
+        "operational_not_sustained_saturation": true
+      },
+      {
+        "id": 7,
+        "track": "A",
+        "configuration": "G6(12)",
+        "expression": "forall k in 0..16, n <= 65536: M(k,n) < 0.3",
+        "checkpoints": [
+          4096,
+          8192,
+          16384,
+          32768,
+          65536
+        ]
+      },
+      {
+        "id": 8,
+        "track": "A",
+        "configurations": [
+          "G1",
+          "G2",
+          "G3(8)",
+          "G5(8)",
+          "G6(8)"
+        ],
+        "expression": "max_distinct_configuration_pairs(D(normalized_mean_g, normalized_mean_h)) > 0.15",
+        "normalization": "entire_mean_surface / own_mean_A(16,8388608)",
+        "any_zero_required_denominator": "undefined"
+      },
+      {
+        "id": 9,
+        "track": "B",
+        "expression": "max_corpus_pairs(D(mean_i,mean_j)) / max_corpus_and_distinct_draw_pairs(D(individual_r,individual_s)) > 3",
+        "between": "five_draw_mean_surfaces",
+        "within": "maximum_over_5_corpora_times_10_draw_pairs",
+        "zero_denominator": "undefined"
+      },
+      {
+        "id": 10,
+        "track": "B",
+        "expression": "forall k in 4..16: M_B1(k,N) > M_B4(k,N) > M_B5(k,N)"
+      }
+    ],
+    "gates": {
+      "Correctness": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "Foundation": [
+        5,
+        8
+      ],
+      "Usefulness": [
+        9,
+        10
+      ]
+    },
+    "gate_calculation": "independent_arithmetic_all_checks_all_gates_always_reported",
+    "outcomes": [
+      {
+        "condition": "required_evidence_incomplete",
+        "outcome": "incomplete_no_completed_verdict"
+      },
+      {
+        "condition": "completed_evidence_AND_correctness_not_passed",
+        "outcome": "Void"
+      },
+      {
+        "condition": "correctness_passed_AND_foundation_not_passed",
+        "outcome": "Foundation dead"
+      },
+      {
+        "condition": "correctness_and_foundation_passed_AND_usefulness_not_passed",
+        "outcome": "Valid but blunt"
+      },
+      {
+        "condition": "all_three_gates_passed",
+        "outcome": "Go"
+      }
+    ],
+    "qualification": "prediction5_failure_is_not_normalized_collapse_if8_passes"
+  },
+  "separability": {
+    "run_condition": "Correctness AND Foundation passed",
+    "configurations": [
+      "G3(2)",
+      "G3(3)",
+      "G3(4)",
+      "G3(5)",
+      "G3(6)",
+      "G3(8)",
+      "G3(10)",
+      "G3(12)",
+      "G3(14)"
+    ],
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "all_checkpoints": true,
+    "all_orders": true,
+    "within_map": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      0,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      16,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      24
+    ],
+    "across_map": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "within_check": "every individual paired cell absolute delta < 0.01",
+    "across_deltas": "original_minus_permuted, all cells and specifically k>=d",
+    "across_threshold": null,
+    "across_threshold_reason": "measurably unspecified; no invented threshold",
+    "theorem": "all global bijections exactly preserve symmetric KT; across-class requested drop impossible",
+    "additional_surface_scope": "secondary_not_in_90_primary"
+  },
+  "annex": {
+    "confirmatory": false,
+    "affects_gates": false,
+    "increments": {
+      "k": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "formula": "A(k,n)-A(k-1,n)"
+    },
+    "mixed_difference": {
+      "formula": "(Delta(k,n_next)-Delta(k,n))/(n_next-n)",
+      "n_scaling": "linear_n",
+      "k_spacing": 1,
+      "location": "adjacent_n_interval",
+      "outside_grid": "unavailable"
+    },
+    "ridge": "evaluation.first_increment_below",
+    "occupancy": {
+      "rows": "visited genuine full-order rows after n updates, excluding startup",
+      "visits": "E_k=max(n-k,0)",
+      "distinct": "count(T_c>0)",
+      "singleton_contexts": "count(T_c==1)",
+      "rare_contexts": "count(1<=T_c<5)",
+      "singleton_mass": "sum(T_c*1[T_c==1])/E_k",
+      "rare_mass": "sum(T_c*1[1<=T_c<5])/E_k",
+      "zero_E": "undefined",
+      "meaning": "empirical_visitation_mass_not_true_generator_probability",
+      "compression": "each_logical_depth_counted_separately"
+    },
+    "cost_reference": {
+      "name": "empirical_conditional_ML_checkpoint_functional_with_uniform_startup",
+      "formula": "min(k,n)*log2(S)+sum_c(f(T_c)-sum_a(f(C_c(a))))",
+      "f": "f(0)=f(1)=0; otherwise double(t)*log2(double(t))",
+      "recurrence": "g(t)=f(t+1)-f(t); per full-row event compute g(T) then g(C_x), subtract, add to per-order binary64 accumulator in input order",
+      "startup": "add log2(S) without full-row recurrence",
+      "save": [
+        "L_ML",
+        "L_KT_minus_L_ML",
+        "(L_KT_minus_L_ML)/n"
+      ],
+      "label": "KT-minus-ML descriptive redundancy",
+      "not": "uniquely pure learning cost or parameter-inclusive online code",
+      "unimplemented": "declare unavailable with reason before run, no silent reference replacement"
+    },
+    "track_A_attribution": {
+      "groups": "predicted_symbol_0_through31",
+      "include_startup": true,
+      "losses": "ordered_L[k][symbol]",
+      "contribution": "(L[0][symbol]-L[k][symbol])/n",
+      "optional_within_symbol_average": "same_numerator/N_symbol; zero undefined",
+      "sum_roundoff": "report_residual_no_forced_reconciliation"
+    },
+    "track_B_whitespace": {
+      "mask_bytes": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        32
+      ],
+      "buckets": [
+        "whitespace",
+        "token_first",
+        "token_continuation"
+      ],
+      "token_first": "nonwhitespace AND (i==0 OR previous_byte_whitespace)",
+      "reset_model": false,
+      "bucket_contribution": "(L0_bucket-Lk_bucket)/n",
+      "optional_within_bucket_average": "same_numerator/count_bucket; zero undefined",
+      "aligned_boundary": "b(n)=1_based_offset_of_last_whitespace_byte_processed_at_or_before_n",
+      "aligned_A": "(L0(b)-Lk(b))/b",
+      "missing_boundary": "null_reason_no_whitespace",
+      "whitespace_run": "latest_seen_byte_even_if_checkpoint_cuts_run",
+      "lookahead": false,
+      "unicode_whitespace": false,
+      "ingestion_segmentation": "owned_separately_by_Sonnet_not_inferred_from_scoring_mask"
+    },
+    "persist": [
+      "raw_L_A_bits",
+      "L_ML_redundancy",
+      "occupancy_integer_numerators_denominators",
+      "per_symbol_or_whitespace_arrays",
+      "means",
+      "sample_std",
+      "individual_diagnostics",
+      "increments",
+      "mixed_differences",
+      "ridge_and_censor_flags"
+    ],
+    "reporting_input": "persisted_arrays_only_no_corpus_rescoring_for_missing_diagnostics"
+  },
+  "engineering": {
+    "architecture": "existing exact reversed-history path-compressed trie and fixed page cache",
+    "production_workers": 1,
+    "cache_data_bytes": 2147483648,
+    "cache_and_input_page_bytes": 65536,
+    "additional_memory": "fixed cache index/clock, frontends/directories, route/node scratch and Annex arrays itemized separately",
+    "traits": {
+      "32": {
+        "digit_bits": 5,
+        "history_bits": 80,
+        "dense_depth": 3,
+        "tail_depth": 4,
+        "dense_rows": 33825,
+        "dense_bytes": 8929800,
+        "directory_slots": 1048576,
+        "directory_bytes": 8388608,
+        "node_record_bytes": 576,
+        "records_per_page": 113
+      },
+      "256": {
+        "digit_bits": 8,
+        "history_bits": 128,
+        "dense_depth": 1,
+        "tail_depth": 2,
+        "dense_rows": 257,
+        "dense_bytes": 528392,
+        "directory_slots": 65536,
+        "directory_bytes": 524288,
+        "node_record_bytes": 4160,
+        "records_per_page": 15
+      }
+    },
+    "serialization": "little_endian_explicit_fields_versioned_by_traits",
+    "disk": "exact_append_only_fixed_dense_node_records_growing_with_n",
+    "cache_index": "bounded_probe_and_fixed_in_place_rebuild_at_tombstones_ge_capacity/4",
+    "crash": "invalid_no_resume_claim",
+    "failure": "explicit_incomplete_resource_error_no_lossy_fallback",
+    "forced_spill_tests_before_sampling": true,
+    "no_agent_spawning": true,
+    "no_deployment_restart": true
+  },
+  "cost_plan": {
+    "primary": "all-order instrumented single-pass checkpoint wall/CPU/RSS/I/O/storage/log-call counters",
+    "per_order": "logical_score_and_update_counts; no false isolated-k latency claim",
+    "supplementary_optional": {
+      "inputs": [
+        "G4/101",
+        "B1/draw1_if_source_ready"
+      ],
+      "prefix_n": [
+        4096,
+        65536,
+        1048576,
+        8388608
+      ],
+      "k_max": [
+        0,
+        4,
+        8,
+        16
+      ],
+      "repetitions": 1,
+      "order": "track_then_n_then_k_ascending",
+      "store": "fresh_per_benchmark",
+      "cache_bytes": 2147483648,
+      "instrumentation": "same_applicable_Annex",
+      "timing": "after_primary_passes_on_existing_bytes",
+      "scope": "separate_benchmark_not_primary_surface_pass",
+      "retuning": false
+    },
+    "extrapolate_n": 1073741824,
+    "arithmetic": "O(N*K) at fixed alphabet",
+    "disk_live_bound": "2*(N+K)*node_record_bytes plus fixed arrays; page slack extra",
+    "io_sensitivity": "N*(reads_per_symbol/read_IOPS+writes_per_symbol/write_IOPS), miss rates may increase with N",
+    "historical_probe": "4KiB probe is not calibrated for 64KiB engine requests",
+    "complete_feasibility": "not_established"
+  },
+  "inspected_partial_implementation": {
+    "status": "reference_snapshot_not_execution_release",
+    "files": [
+      {
+        "path": "include/block01/kt_engine.hpp",
+        "sha256": "5ba935b0d2c5651a46efe6dc9a58b4630ce32350159719a6b02483ea73b583a0"
+      },
+      {
+        "path": "src/kt_engine.cpp",
+        "sha256": "7409877072b2cb8133c38dc6ca02498376611295e4aa9d2f403bf381429bd153"
+      },
+      {
+        "path": "CMakeLists.txt",
+        "sha256": "e2a0d2551a4106614936b2163604676f299bf802f80460516ce9c296a64795ae"
+      }
+    ],
+    "no_build_or_runtime_verification_by_this_role": true
+  }
+}

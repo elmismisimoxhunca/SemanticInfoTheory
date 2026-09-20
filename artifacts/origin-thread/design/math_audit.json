@@ -1,0 +1,109 @@
+{
+  "kind": "analytical audit, no empirical curves",
+  "lag_copy": {
+    "q": 0.7578125,
+    "r": 0.0078125,
+    "entropy_rate_bits": 1.9985035492800673,
+    "asymptotic_available_gain_bits": 3.001496450719933
+  },
+  "G3": {
+    "entropy_rate_bits": 3.4444444444444446,
+    "pooled_phase_conditional_entropies_k_0_to_16": [
+      4.76420450650862,
+      4.2379677166751435,
+      4.211126058876681,
+      4.17884894160409,
+      4.138345833092948,
+      4.083876389129275,
+      4.0,
+      3.7777777777777777,
+      3.4444444444444446,
+      3.4444444444444446,
+      3.4444444444444446,
+      3.4444444444444446,
+      3.4444444444444446,
+      3.4444444444444446,
+      3.4444444444444446,
+      3.4444444444444446,
+      3.4444444444444446
+    ],
+    "oracle_gains_k_0_to_16": [
+      0.0,
+      0.5262367898334768,
+      0.026841657798462926,
+      0.032277117272590417,
+      0.04050310851114247,
+      0.05446944396367304,
+      0.08387638912927464,
+      0.22222222222222232,
+      0.33333333333333304,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "largest_gain_k_2_to_7": 0.22222222222222232,
+    "agreement_gain_k_8": 0.33333333333333304,
+    "agreeing_position_context_support_k_7": 268435456,
+    "agreeing_position_context_support_k_8": 2147483648,
+    "warning": "Oracle entropies are not finite-sample KT availability. Phase is pooled, not supplied as a side channel."
+  },
+  "uniform_key_storage_estimates": [
+    {
+      "N": 10000000,
+      "assumption": "Independent uniform length-16 history keys; Poisson approximation, not a generator sample.",
+      "tail_branch_nodes_by_depth": {
+        "4": 1047659.7889564153,
+        "5": 1189996.753485631,
+        "6": 44836.173607777004,
+        "7": 1409.4475693852016,
+        "8": 44.053386681203,
+        "9": 1.3766762937609964,
+        "10": 0.04302114195346874,
+        "11": 0.0013444106936371465,
+        "12": 4.2012834183574156e-05,
+        "13": 1.312901068243932e-06,
+        "14": 4.102815838262995e-08,
+        "15": 1.2821299494571927e-09
+      },
+      "tail_branch_nodes": 2283947.638091104,
+      "approx_leaf_nodes": 10000000,
+      "node_headers_bytes_64_each": 786172648.8378307,
+      "singleton_leaves_plus_dense_branch_payload_bytes": 1955553839.5404758,
+      "excluded": "page slack, startup endpoints, allocator metadata, dense frontend, filesystem overhead; repeated-key leaf histograms assumed absent"
+    },
+    {
+      "N": 1000000000,
+      "assumption": "Independent uniform length-16 history keys; Poisson approximation, not a generator sample.",
+      "tail_branch_nodes_by_depth": {
+        "4": 1048576.0,
+        "5": 33554431.99980788,
+        "6": 250830754.52985018,
+        "7": 13830791.490761887,
+        "8": 440273.64762771147,
+        "9": 13766.508733821473,
+        "10": 430.2111712862516,
+        "11": 13.444106693941274,
+        "12": 0.4201283415989933,
+        "13": 0.01312901068220812,
+        "14": 0.00041028158382607366,
+        "15": 1.2821299494571707e-05
+      },
+      "tail_branch_nodes": 299719038.2657399,
+      "approx_leaf_nodes": 1000000000,
+      "node_headers_bytes_64_each": 83182018449.00735,
+      "singleton_leaves_plus_dense_branch_payload_bytes": 236638166041.0662,
+      "excluded": "page slack, startup endpoints, allocator metadata, dense frontend, filesystem overhead; repeated-key leaf histograms assumed absent"
+    }
+  ],
+  "production_counts": {
+    "curves": 30,
+    "symbols_total": 300000000,
+    "naive_order_scores": 5100000000
+  },
+  "assertions_passed": 6
+}

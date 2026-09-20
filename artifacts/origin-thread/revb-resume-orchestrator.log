@@ -1,0 +1,66 @@
+2026-09-16T22:10:46Z orchestrator_start
+[A 01/90] A_G1_s101
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G1_s101.json
+[A 02/90] A_G1_s202
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G1_s202.json
+[A 03/90] A_G1_s303
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G1_s303.json
+[A 04/90] A_G1_s404
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G1_s404.json
+[A 05/90] A_G1_s505
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G1_s505.json
+[A 06/90] A_G2_s101
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G2_s101.json
+[A 07/90] A_G2_s202
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G2_s202.json
+[A 08/90] A_G2_s303
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G2_s303.json
+[A 09/90] A_G2_s404
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G2_s404.json
+[A 10/90] A_G2_s505
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G2_s505.json
+[A 11/90] A_G3_d2_s101
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d2_s101.json
+[A 12/90] A_G3_d2_s202
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d2_s202.json
+[A 13/90] A_G3_d2_s303
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d2_s303.json
+[A 14/90] A_G3_d2_s404
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d2_s404.json
+[A 15/90] A_G3_d2_s505
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d2_s505.json
+[A 16/90] A_G3_d3_s101
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d3_s101.json
+[A 17/90] A_G3_d3_s202
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d3_s202.json
+[A 18/90] A_G3_d3_s303
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d3_s303.json
+[A 19/90] A_G3_d3_s404
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d3_s404.json
+[A 20/90] A_G3_d3_s505
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d3_s505.json
+[A 21/90] A_G3_d4_s101
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d4_s101.json
+[A 22/90] A_G3_d4_s202
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d4_s202.json
+[A 23/90] A_G3_d4_s303
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d4_s303.json
+[A 24/90] A_G3_d4_s404
+  explicit run-boundary reuse: verified completed revb_run/track_a/surfaces/A_G3_d4_s404.json
+[A 25/90] A_G3_d4_s505
+2026-09-16T22:10:46Z resource_check_ok item=track_a:A_G3_d4_s505 load1=1.69 cores=8 available_mib=13415
++ /home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z/build/kt_stream --corpus revb_run/track_a/corpora/A_G3_d4_s505.bin --output revb_run/track_a/surfaces/A_G3_d4_s505.json --store revb_run/track_a/stores/A_G3_d4_s505.store --k-max 16 --checkpoints 4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608 --cache-mib 2048
+revb_run/track_a/surfaces/A_G3_d4_s505.json
+2026-09-16T22:45:08Z completed item=track_a:A_G3_d4_s505
+[A 26/90] A_G3_d5_s101
+2026-09-16T22:45:16Z resource_check_ok item=track_a:A_G3_d5_s101 load1=5.40 cores=8 available_mib=13820
++ /home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z/build/generate_corpus --configuration G3(5) --seed 101 --n 8388608 --output revb_run/track_a/corpora/A_G3_d5_s101.bin --execution-manifest-sha256 892d30792592de296e8d33c68b8652f62fa2e742896f54c9f1d054f0fd5cf74a
+revb_run/track_a/corpora/A_G3_d5_s101.bin
++ /home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z/build/kt_stream --corpus revb_run/track_a/corpora/A_G3_d5_s101.bin --output revb_run/track_a/surfaces/A_G3_d5_s101.json --store revb_run/track_a/stores/A_G3_d5_s101.store --k-max 16 --checkpoints 4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608 --cache-mib 2048
+revb_run/track_a/surfaces/A_G3_d5_s101.json
+2026-09-17T00:11:02Z completed item=track_a:A_G3_d5_s101
+[A 27/90] A_G3_d5_s202
+2026-09-17T00:11:10Z resource_check_ok item=track_a:A_G3_d5_s202 load1=7.72 cores=8 available_mib=13814
++ /home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z/build/generate_corpus --configuration G3(5) --seed 202 --n 8388608 --output revb_run/track_a/corpora/A_G3_d5_s202.bin --execution-manifest-sha256 892d30792592de296e8d33c68b8652f62fa2e742896f54c9f1d054f0fd5cf74a
+revb_run/track_a/corpora/A_G3_d5_s202.bin
++ /home/sebastian/.bb-machines/bb-s6.mesh.srtv.cl/personal-workspaces/env_sveaeeem4z/build/kt_stream --corpus revb_run/track_a/corpora/A_G3_d5_s202.bin --output revb_run/track_a/surfaces/A_G3_d5_s202.json --store revb_run/track_a/stores/A_G3_d5_s202.store --k-max 16 --checkpoints 4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608 --cache-mib 2048
