@@ -1,0 +1,18 @@
+{
+  "schema": "block01-corpus-v1",
+  "track": "A",
+  "alphabet_size": 32,
+  "expected_n": 8388608,
+  "run_id": "A_G4_s101",
+  "corpus_sha256": "8d75e31ec4002a51d3482fc1761ccdd003320bfb8505a199890e496b1043a375",
+  "protocol_sha256": "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2",
+  "freeze_sha256": "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036",
+  "execution_manifest_sha256": "892d30792592de296e8d33c68b8652f62fa2e742896f54c9f1d054f0fd5cf74a",
+  "configuration": "G4",
+  "seed": 101,
+  "generator_family": "iid_uniform",
+  "generator_parameter": 0,
+  "prng_sha256": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542",
+  "duplicate_provenance": "",
+  "fixture_only": false
+}
