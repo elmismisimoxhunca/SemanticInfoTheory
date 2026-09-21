@@ -65,18 +65,23 @@ The audit commands expect the local Track B corpus snapshot described in `data/R
 
 ## Resume the frozen run
 
-Run exactly one scoring pipeline at a time using the verified frozen binaries:
+Run exactly one scoring pipeline at a time using the verified frozen binaries. The detached launcher places the orchestrator in its own session while the BB terminal tails its file-backed output; this prevents a BB host-daemon/PTY disconnect from killing the active scorer:
 
 ```bash
-python3 scripts/resume_throttled_orchestrator.py \
+python3 scripts/start_revb_detached.py \
   --workspace . \
   --track-a-output-root revb_run/track_a \
   --track-b-corpus-root data/trackb_corpora \
   --track-b-output-root revb_run/track_b \
-  --resource-log revb_run/reports/revb-resource-log.txt
+  --resource-log revb_run/reports/revb-resource-log.txt \
+  --pid-file revb_run/reports/revb-orchestrator.pid \
+  --console-log revb_run/reports/revb-orchestrator-console.log
+
+pid=$(cat revb_run/reports/revb-orchestrator.pid)
+tail --pid="$pid" -n 60 -F revb_run/reports/revb-orchestrator-console.log
 ```
 
-The orchestrator validates and reuses complete surfaces, requires at least 32 GiB free for Track A and 128 GiB for Track B, validates each newly completed surface before removing any remaining scratch store, and resumes in frozen order. Long execution should run in a persistent BB terminal.
+The launcher refuses to start if this workspace already has a live orchestrator. The orchestrator validates and reuses complete surfaces, requires at least 32 GiB free for Track A and 128 GiB for Track B, validates each newly completed surface before removing any remaining scratch store, and resumes in frozen order. Long execution should run and remain inspectable in a persistent BB terminal.
 
 ## Data policy
 

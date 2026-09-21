@@ -17,6 +17,8 @@ __pycache__/
 # Exact-count stores are disposable and can be many GiB
 *.store
 /revb_run/**/stores/
+/revb_run/reports/revb-orchestrator.pid
+/revb_run/reports/revb-orchestrator-console.log
 
 # Generated/raw corpora stay machine-local
 /revb_run/track_a/corpora/*.bin
