@@ -1,0 +1,18 @@
+{
+  "schema": "block01-corpus-v1",
+  "track": "A",
+  "alphabet_size": 32,
+  "expected_n": 8388608,
+  "run_id": "A_G5_d12_s202",
+  "corpus_sha256": "d3288eb7d56924b38ecfd77639faea9361a856a6d26c9bfc1c80bddba53174e4",
+  "protocol_sha256": "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2",
+  "freeze_sha256": "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036",
+  "execution_manifest_sha256": "892d30792592de296e8d33c68b8652f62fa2e742896f54c9f1d054f0fd5cf74a",
+  "configuration": "G5(12)",
+  "seed": 202,
+  "generator_family": "lag_copy",
+  "generator_parameter": 2,
+  "prng_sha256": "a38ce3bd9dbf751f40b92c5ebea85c191e60c71d935b134068944651582b7542",
+  "duplicate_provenance": "identical_by_frozen_kernel_to_G5(4)_seed_202; independently_generated_lag2_stream",
+  "fixture_only": false
+}
