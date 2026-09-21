@@ -76,7 +76,7 @@ python3 scripts/resume_throttled_orchestrator.py \
   --resource-log revb_run/reports/revb-resource-log.txt
 ```
 
-The orchestrator validates and reuses complete surfaces, deletes stale per-item stores, and resumes in frozen order. Long execution should run in a persistent BB terminal.
+The orchestrator validates and reuses complete surfaces, requires at least 32 GiB free for Track A and 128 GiB for Track B, validates each newly completed surface before removing any remaining scratch store, and resumes in frozen order. Long execution should run in a persistent BB terminal.
 
 ## Data policy
 

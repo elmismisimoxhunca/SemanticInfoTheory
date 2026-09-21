@@ -13,14 +13,19 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import time
+from collections.abc import Callable
 from pathlib import Path
 
 EXECUTION_MANIFEST_SHA256 = "892d30792592de296e8d33c68b8652f62fa2e742896f54c9f1d054f0fd5cf74a"
 PROTOCOL_SHA256 = "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2"
 FREEZE_SHA256 = "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036"
 CHECKPOINTS = [2**power for power in range(12, 24)]
+GIB = 1024**3
+TRACK_A_MIN_FREE_BYTES = 32 * GIB
+TRACK_B_MIN_FREE_BYTES = 128 * GIB
 
 
 def log_line(log_path: Path, message: str) -> None:
@@ -49,22 +54,47 @@ def nproc() -> int:
     return os.cpu_count() or 1
 
 
-def wait_for_resources(log_path: Path, item_label: str) -> None:
+def resources_available(
+    *,
+    load1: float,
+    cores: int,
+    available_mib: float,
+    free_bytes: int,
+    minimum_free_bytes: int,
+) -> bool:
+    return load1 <= cores and available_mib >= 2048.0 and free_bytes >= minimum_free_bytes
+
+
+def wait_for_resources(
+    log_path: Path,
+    item_label: str,
+    disk_path: Path,
+    minimum_free_bytes: int,
+) -> None:
     cores = nproc()
     while True:
         load1 = read_load1()
         available_mib = read_meminfo_available_mib()
-        if load1 <= cores and available_mib >= 2048.0:
+        free_bytes = shutil.disk_usage(disk_path).free
+        if resources_available(
+            load1=load1,
+            cores=cores,
+            available_mib=available_mib,
+            free_bytes=free_bytes,
+            minimum_free_bytes=minimum_free_bytes,
+        ):
             log_line(
                 log_path,
                 f"resource_check_ok item={item_label} load1={load1:.2f} cores={cores} "
-                f"available_mib={available_mib:.0f}",
+                f"available_mib={available_mib:.0f} free_disk_gib={free_bytes / GIB:.1f} "
+                f"required_free_disk_gib={minimum_free_bytes / GIB:.1f}",
             )
             return
         log_line(
             log_path,
             f"resource_pause item={item_label} load1={load1:.2f} cores={cores} "
-            f"available_mib={available_mib:.0f} action=sleep_60s",
+            f"available_mib={available_mib:.0f} free_disk_gib={free_bytes / GIB:.1f} "
+            f"required_free_disk_gib={minimum_free_bytes / GIB:.1f} action=sleep_60s",
         )
         time.sleep(60)
 
@@ -125,6 +155,29 @@ def checked_run(command: list[str]) -> None:
     subprocess.run(command, check=True)
 
 
+def finalize_completed_run(
+    *,
+    surface: Path,
+    store: Path,
+    run_id: str,
+    item_label: str,
+    validator: Callable[[Path, str], bool],
+    log_path: Path,
+) -> None:
+    if not validator(surface, run_id):
+        raise RuntimeError(f"completed surface validation failed for {run_id}; preserving scratch store")
+    if not store.exists():
+        return
+    store_bytes = store.stat().st_size
+    store.unlink()
+    free_bytes = shutil.disk_usage(store.parent).free
+    log_line(
+        log_path,
+        f"store_cleanup item={item_label} deleted_bytes={store_bytes} "
+        f"free_disk_gib={free_bytes / GIB:.1f}",
+    )
+
+
 def run_track_a(workspace: Path, output_root: Path, log_path: Path) -> None:
     freeze = json.loads((workspace / "REVB_FREEZE.json").read_text(encoding="utf-8"))
     runs = freeze["track_A"]["runs"]
@@ -147,10 +200,23 @@ def run_track_a(workspace: Path, output_root: Path, log_path: Path) -> None:
         store = store_dir / f"{run_id}.store"
         print(f"[A {ordinal:02d}/90] {run_id}", flush=True)
         if valid_completed_surface_a(surface, run_id):
+            finalize_completed_run(
+                surface=surface,
+                store=store,
+                run_id=run_id,
+                item_label=f"track_a:{run_id}",
+                validator=valid_completed_surface_a,
+                log_path=log_path,
+            )
             print(f"  explicit run-boundary reuse: verified completed {surface}", flush=True)
             continue
 
-        wait_for_resources(log_path, f"track_a:{run_id}")
+        wait_for_resources(
+            log_path,
+            f"track_a:{run_id}",
+            store_dir,
+            TRACK_A_MIN_FREE_BYTES,
+        )
 
         if not corpus.is_file() or not Path(str(corpus) + ".meta.json").is_file():
             if corpus.exists() or Path(str(corpus) + ".meta.json").exists():
@@ -178,6 +244,14 @@ def run_track_a(workspace: Path, output_root: Path, log_path: Path) -> None:
             "--checkpoints", ",".join(str(v) for v in run["checkpoints"]),
             "--cache-mib", "2048",
         ])
+        finalize_completed_run(
+            surface=surface,
+            store=store,
+            run_id=run_id,
+            item_label=f"track_a:{run_id}",
+            validator=valid_completed_surface_a,
+            log_path=log_path,
+        )
         log_line(log_path, f"completed item=track_a:{run_id}")
         time.sleep(8)
 
@@ -256,10 +330,23 @@ def run_track_b(workspace: Path, corpus_root: Path, output_root: Path, log_path:
             store_path = store_dir / f"{run_id}.store"
             print(f"[B {ordinal:02d}/25] {run_id}", flush=True)
             if validate_surface_b(result_path, run_id):
+                finalize_completed_run(
+                    surface=result_path,
+                    store=store_path,
+                    run_id=run_id,
+                    item_label=f"track_b:{run_id}",
+                    validator=validate_surface_b,
+                    log_path=log_path,
+                )
                 print(f"  explicit run-boundary reuse: verified completed {result_path}", flush=True)
                 continue
 
-            wait_for_resources(log_path, f"track_b:{run_id}")
+            wait_for_resources(
+                log_path,
+                f"track_b:{run_id}",
+                store_dir,
+                TRACK_B_MIN_FREE_BYTES,
+            )
 
             if not corpus_path.is_file() or corpus_path.stat().st_size != 2**23:
                 raise RuntimeError(f"missing or wrong-length Track B corpus: {corpus_path}")
@@ -304,6 +391,14 @@ def run_track_b(workspace: Path, corpus_root: Path, output_root: Path, log_path:
                 "--checkpoints", ",".join(str(v) for v in CHECKPOINTS),
                 "--cache-mib", "2048",
             ])
+            finalize_completed_run(
+                surface=result_path,
+                store=store_path,
+                run_id=run_id,
+                item_label=f"track_b:{run_id}",
+                validator=validate_surface_b,
+                log_path=log_path,
+            )
             log_line(log_path, f"completed item=track_b:{run_id}")
             time.sleep(8)
 
