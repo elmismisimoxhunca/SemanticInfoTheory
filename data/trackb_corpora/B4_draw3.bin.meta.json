@@ -1,0 +1,15 @@
+{
+  "alphabet_size": 256,
+  "corpus": "B4",
+  "corpus_sha256": "79164cc4b82a26fedebc11d6eb144d9b2076ca9ca865da89c078d13bb5700b8b",
+  "draw_id": 3,
+  "execution_manifest_sha256": "892d30792592de296e8d33c68b8652f62fa2e742896f54c9f1d054f0fd5cf74a",
+  "expected_n": 8388608,
+  "freeze_sha256": "ec2a97849acc0d93c71d2f8af9744808950e748d6056d5e71bef764d3ae63036",
+  "protocol_sha256": "9180c10578a1c2f15f96e97ff93893e5e4889dad417531d50b8bc97c81fd04b2",
+  "run_id": "B_B4_draw3",
+  "schema": "block01-corpus-v1",
+  "source_manifest_sha256": "ffd70d8b0ba5777f216382db9cdd66908fb710a6ee87bb343050ab81ece816d1",
+  "track": "B",
+  "transformation_provenance": "controlled transform of B1_draw3.bin; frozen sentence-unit shuffle seed 603; prefix/suffix fixed"
+}
